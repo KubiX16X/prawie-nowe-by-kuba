@@ -5,8 +5,7 @@
    Sprzedane:  zmień  sprzedane: false  na  sprzedane: true
    Nowa rzecz: skopiuj cały blok { ... } jednej rzeczy, nadaj kolejny kod
                (PN006, PN007...), zdjęcia wrzuć do img/p6/
-               (01.jpg = przód, kolejne numery, thumb.jpg = miniatura,
-               w01.jpg, w02.jpg = przód i tył wycięte z tła)
+               (01.jpg = przód, kolejne numery, thumb.jpg = miniatura)
    ================================================================ */
 
 window.SKLEP = {
@@ -36,7 +35,6 @@ window.PRODUKTY = [
     ],
     material: "72% wełna, 28% poliamid",
     kolor: "beżowy",
-    wyciete: 2,     // zdjęcia w01.jpg, w02.jpg = rzecz wycięta z tła (pokazywane jako pierwsze)
     zdjecia: 7,
     folder: "p1",
     // DO SPRAWDZENIA: brak szerokości pod pachami; ciemniejsze miejsce pod golfem na plecach – światło czy plamka?
@@ -59,7 +57,6 @@ window.PRODUKTY = [
     ],
     material: "Tkanina główna: 46% bawełna, 46% poliester, 8% wiskoza. Tkanina dodatkowa: 100% bawełna.",
     kolor: "czarny",
-    wyciete: 2,     // zdjęcia w01.jpg, w02.jpg = rzecz wycięta z tła (pokazywane jako pierwsze)
     zdjecia: 9,
     folder: "p2",
     // DO SPRAWDZENIA: długość (brak pewnego pomiaru), miejsce pomiaru szerokości i rękawa
@@ -81,7 +78,6 @@ window.PRODUKTY = [
     ],
     material: "84% poliester, 16% bawełna. Podszewka: 100% poliester.",
     kolor: "niebieski melanż",
-    wyciete: 2,     // zdjęcia w01.jpg, w02.jpg = rzecz wycięta z tła (pokazywane jako pierwsze)
     zdjecia: 10,
     folder: "p3",
     // DO SPRAWDZENIA: szerokość pod pachami, rękaw, ramiona; ciemniejsze miejsce na plecach, kropka na rękawie, plamka na podszewce
@@ -97,7 +93,7 @@ window.PRODUKTY = [
     cena: 120,
     sprzedane: false,
     opis: "Elastyczna kurtka z linii Cold.RDY, rozpinana na całej długości, z kapturem. W środku polar w korpusie i kapturze. Kieszenie na zamek z odblaskowymi detalami, ściągacze z napisem COLD.RDY.",
-    wady: "Drobne jasne smugi na przodzie (zdjęcie 9) i lekko zbity polar przy mankiecie (zdjęcie 7).",
+    wady: "Drobne jasne smugi na przodzie (zdjęcie 7) i lekko zbity polar przy mankiecie (zdjęcie 5).",
     wymiary: [
       ["Pod pachami", "ok. 52 cm"],
       ["Długość (od kołnierza)", "ok. 70 cm"],
@@ -105,7 +101,6 @@ window.PRODUKTY = [
     ],
     material: "Materiał główny: 92% poliester z recyklingu, 8% elastan.",
     kolor: "czarny",
-    wyciete: 2,     // zdjęcia w01.jpg, w02.jpg = rzecz wycięta z tła (pokazywane jako pierwsze)
     zdjecia: 8,
     folder: "p4",
     // DO SPRAWDZENIA: skład podszewki; czy smugi schodzą w praniu (wtedy stan: Bardzo dobry)
@@ -121,13 +116,12 @@ window.PRODUKTY = [
     cena: 49,
     sprzedane: false,
     opis: "Luźny, pikowany bezrękawnik ze stójką i odpinanym kapturem (zamek i napy). Zamek przykryty listwą na napy, dwie kieszenie boczne. Ciepła warstwa na jesień.",
-    wady: "Jasne plamy na kapturze od zewnątrz i ciemniejsze zabrudzenia wewnątrz kaptura przy zamku (zdjęcia 7 i 8). Kaptur można odpiąć.",
+    wady: "Jasne plamy na kapturze od zewnątrz i ciemniejsze zabrudzenia wewnątrz kaptura przy zamku (zdjęcia 5 i 6). Kaptur można odpiąć.",
     wymiary: [
       ["Długość (od góry stójki)", "ok. 77 cm"],
     ],
     material: "Wierzch: 100% poliester. Podszewka: 100% poliester.",
     kolor: "czarny",
-    wyciete: 2,     // zdjęcia w01.jpg, w02.jpg = rzecz wycięta z tła (pokazywane jako pierwsze)
     zdjecia: 12,
     folder: "p5",
     // DO SPRAWDZENIA: szerokość pod pachami, wypełnienie (brak na metce)

@@ -15,7 +15,14 @@
   function money(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' zł'; }
   function pad(n) { return (n < 10 ? '0' : '') + n; }
   function byKod(k) { return P.filter(function (p) { return p.kod === k; })[0]; }
-  function img(p, n) { return 'img/' + p.folder + '/' + (n === 'thumb' ? 'thumb' : pad(n)) + '.jpg'; }
+  function img(p, n) { return 'img/' + p.folder + '/' + (typeof n === 'string' ? n : pad(n)) + '.jpg'; }
+  // Galeria: najpierw zdjęcia wycięte z tła (w01, w02...), potem wszystkie oryginalne
+  function photos(p) {
+    var list = [], i;
+    for (i = 1; i <= (p.wyciete || 0); i++) list.push('w' + pad(i));
+    for (i = 1; i <= p.zdjecia; i++) list.push(pad(i));
+    return list;
+  }
   function num(p) { return parseInt(String(p.kod).replace(/\D/g, ''), 10) || 0; }
   function plural(n, a, b, c) { return n === 1 ? a : (n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? b : c); }
   function store(key, val) {
@@ -112,7 +119,7 @@
   var REEL_MS = 4800, reelI = -1, reelT = null, reelPaused = false;
   REEL.forEach(function (p, i) {
     var d = document.createElement('div'); d.className = 'slide';
-    d.innerHTML = '<img src="' + img(p, 1) + '" alt="' + esc(p.marka + ' ' + p.tytul) + '"' + (i ? ' loading="lazy"' : '') + '>';
+    d.innerHTML = '<img src="' + img(p, p.wyciete ? 'w01' : 1) + '" alt="' + esc(p.marka + ' ' + p.tytul) + '"' + (i ? ' loading="lazy"' : '') + '>';
     reel.insertBefore(d, $('#heroVideo'));
   });
   dots.innerHTML = REEL.map(function () { return '<i></i>'; }).join('');
@@ -269,8 +276,8 @@
   function openModal(kod, fromRoute) {
     var p = byKod(kod); if (!p) return;
     openKod = kod;
-    var slides = '';
-    for (var i = 1; i <= p.zdjecia; i++) slides += '<img src="' + img(p, i) + '" alt="' + esc(p.marka + ' ' + p.tytul + ', zdjęcie ' + i) + '"' + (i > 2 ? ' loading="lazy"' : '') + '>';
+    var ph = photos(p), slides = '';
+    ph.forEach(function (n, k) { slides += '<img src="' + img(p, n) + '" alt="' + esc(p.marka + ' ' + p.tytul + ', zdjęcie ' + (k + 1)) + '"' + (k > 1 ? ' loading="lazy"' : '') + '>'; });
     var meas = (p.wymiary || []).length
       ? '<ul>' + p.wymiary.map(function (w) { return '<li>' + esc(w[0]) + ': <b>' + esc(w[1]) + '</b></li>'; }).join('') + '</ul>'
       : 'zapytaj w wiadomości';
@@ -279,7 +286,7 @@
       '<button class="x" id="modalClose" aria-label="Zamknij">×</button>' +
       '<div class="gallery"><div class="slides" id="slides">' + slides + '</div>' +
         '<button class="arrow prev" aria-label="Poprzednie zdjęcie">‹</button><button class="arrow next" aria-label="Następne zdjęcie">›</button>' +
-        '<span class="gcount" id="gcount">1 / ' + p.zdjecia + '</span></div>' +
+        '<span class="gcount" id="gcount">1 / ' + ph.length + '</span></div>' +
       '<div class="modal__body"><span class="card__brand">' + esc(p.marka) + '</span><h3>' + esc(p.tytul) + '</h3>' +
         '<div class="modal__price"><strong>' + money(p.cena) + '</strong><span>KOD ' + esc(p.kod) + '</span></div>' +
         '<p class="modal__lead">' + esc(p.opis) + '</p>' +
@@ -299,9 +306,9 @@
               '<a class="btn btn--line btn--full" id="buyNow" href="' + IG_DM + '" target="_blank" rel="noopener">Zamów przez Instagram</a>' +
               '<div class="msg" id="buyMsg" hidden>' + esc(msg) + '</div>') +
         '</div>' +
-        '<p class="modal__note">Wymiary na płasko. Na zdjęciach jest dokładnie ten egzemplarz.</p></div>';
+        '<p class="modal__note">' + (p.wyciete ? 'Zdjęcia 1–' + p.wyciete + ': ta rzecz wycięta z tła. Pozostałe bez obróbki.' : 'Na zdjęciach jest dokładnie ten egzemplarz.') + ' Wymiary na płasko.</p></div>';
     var sl = $('#slides'), gc = $('#gcount');
-    sl.addEventListener('scroll', function () { gc.textContent = (Math.round(sl.scrollLeft / sl.clientWidth) + 1) + ' / ' + p.zdjecia; }, { passive: true });
+    sl.addEventListener('scroll', function () { gc.textContent = (Math.round(sl.scrollLeft / sl.clientWidth) + 1) + ' / ' + ph.length; }, { passive: true });
     $('.arrow.prev', modal).onclick = function () { sl.scrollBy({ left: -sl.clientWidth, behavior: 'smooth' }); };
     $('.arrow.next', modal).onclick = function () { sl.scrollBy({ left: sl.clientWidth, behavior: 'smooth' }); };
     var bn = $('#buyNow');

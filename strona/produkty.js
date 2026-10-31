@@ -11,6 +11,7 @@
 
 window.SKLEP = {
   instagram: "prawienowebykuba",          // nazwa konta na Instagramie (bez @)
+  whatsapp: "48570005150",               // numer WhatsApp z kierunkowym 48, bez spacji i plusa
   tiktok: "prawienowebykuba",
   email: "prawienowebykuba@gmail.com",
   wysylka: "Wysyłka w 1–2 dni robocze od zaksięgowania wpłaty, starannie zapakowane.",

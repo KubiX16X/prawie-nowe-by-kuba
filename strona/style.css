@@ -41,6 +41,7 @@ em{font-style:italic}
 .lead{font-size:18px;color:var(--muted);max-width:480px}
 
 /* przyciski */
+.btn svg{flex-shrink:0}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:17px 30px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:400;border:1px solid var(--ink);transition:.35s var(--ease);text-align:center}
 .btn--dark{background:var(--ink);color:var(--paper)}
 .btn--dark:hover{background:transparent;color:var(--ink)}

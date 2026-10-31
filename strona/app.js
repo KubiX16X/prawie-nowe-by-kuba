@@ -6,6 +6,9 @@
   var P = (window.PRODUKTY || []).slice();
   var IG = 'https://www.instagram.com/' + (S.instagram || '') + '/';
   var IG_DM = 'https://ig.me/m/' + encodeURIComponent(S.instagram || '');
+  // WhatsApp otwiera czat z gotową wiadomością – klient klika tylko „Wyślij”
+  function waLink(text) { return 'https://wa.me/' + (S.whatsapp || '') + '?text=' + encodeURIComponent(text); }
+  var WA_ICON = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4.5 19.5l1.1-3.6A8 8 0 1 1 8.4 18.6z"/><path d="M9.2 8.6c.2-.5.5-.5.8-.5h.5c.2 0 .4.1.5.4l.6 1.4c.1.2 0 .5-.1.6l-.5.6c.6 1.1 1.5 2 2.6 2.6l.6-.5c.2-.1.4-.2.6-.1l1.4.6c.3.1.4.3.4.5v.5c0 .3 0 .6-.5.8-1.6.8-6.9-2.5-6.9-6.9z" fill="currentColor" stroke="none"/></svg>';
   var TT = 'https://www.tiktok.com/@' + (S.tiktok || '');
 
   /* ---------- narzędzia ---------- */
@@ -50,6 +53,7 @@
   /* ---------- linki stałe ---------- */
   $$('[data-ig]').forEach(function (a) { a.href = IG; });
   $$('[data-tt]').forEach(function (a) { a.href = TT; });
+  $$('[data-wa]').forEach(function (a) { a.href = 'https://wa.me/' + S.whatsapp; });
   $$('[data-mail]').forEach(function (a) { a.href = 'mailto:' + S.email; a.textContent = S.email; });
   $('#year').textContent = new Date().getFullYear();
 
@@ -257,10 +261,13 @@
     }).join('');
     var msg = orderMessage(list);
     foot.innerHTML = '<div class="total"><span>Razem</span><strong>' + money(sum) + '</strong></div>' +
-      '<a class="btn btn--dark btn--full" id="cartOrder" href="' + IG_DM + '" target="_blank" rel="noopener">Zamów przez Instagram</a>' +
-      '<small>Przycisk kopiuje wiadomość z kodami i otwiera czat @' + esc(S.instagram) + '. Koszt wysyłki podam w odpowiedzi. Jeśli się nie skopiuje, przepisz:</small>' +
-      '<div class="msg" id="cartMsg">' + esc(msg) + '</div>';
-    $('#cartOrder').addEventListener('click', function () { copyText(msg, $('#cartMsg')); });
+      (S.whatsapp ? '<a class="btn btn--dark btn--full" href="' + esc(waLink(msg)) + '" target="_blank" rel="noopener">' + WA_ICON + 'Zamów przez WhatsApp</a>' +
+        '<small>Otworzy się czat z gotową wiadomością z kodami. Wystarczy kliknąć „Wyślij”.</small>' : '') +
+      '<a class="btn btn--line btn--full" id="cartOrder" href="' + IG_DM + '" target="_blank" rel="noopener">Zamów przez Instagram</a>' +
+      '<small id="cartIgHelp" hidden>Wiadomość jest skopiowana: wklej ją w czacie @' + esc(S.instagram) + '. Jeśli się nie skopiowała, przepisz:</small>' +
+      '<div class="msg" id="cartMsg" hidden>' + esc(msg) + '</div>' +
+      '<small>Koszt wysyłki podam w odpowiedzi.</small>';
+    $('#cartOrder').addEventListener('click', function () { $('#cartIgHelp').hidden = false; $('#cartMsg').hidden = false; copyText(msg, $('#cartMsg')); });
   }
   $('#drawerBody').addEventListener('click', function (e) { var r = e.target.closest('[data-rm]'); if (r) removeFromCart(r.getAttribute('data-rm')); });
   $('#drawerFoot').addEventListener('click', function (e) { if (e.target.closest('[data-close]')) closeDrawer(); });
@@ -304,6 +311,7 @@
           (p.sprzedane
             ? '<button class="btn btn--line btn--full" disabled>Sprzedane</button>'
             : '<button class="btn btn--dark btn--full" data-add="' + esc(p.kod) + '">Dodaj do koszyka</button>' +
+              (S.whatsapp ? '<a class="btn btn--line btn--full" href="' + esc(waLink(msg)) + '" target="_blank" rel="noopener">' + WA_ICON + 'Zamów przez WhatsApp</a>' : '') +
               '<a class="btn btn--line btn--full" id="buyNow" href="' + IG_DM + '" target="_blank" rel="noopener">Zamów przez Instagram</a>' +
               '<div class="msg" id="buyMsg" hidden>' + esc(msg) + '</div>') +
         '</div>' +

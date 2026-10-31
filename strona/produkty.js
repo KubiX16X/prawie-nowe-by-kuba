@@ -1,17 +1,17 @@
 /* ================================================================
    PRAWIE NOWE BY KUBA – dane sklepu
-   To jedyny plik, który edytujesz przy dodawaniu i sprzedawaniu rzeczy.
+   To jedyny plik, który zmieniasz przy dodawaniu i sprzedawaniu rzeczy.
 
-   Sprzedane:   zmień  sprzedane: false  na  sprzedane: true
-   Nowa rzecz:  skopiuj cały blok { ... } jednej rzeczy, zmień dane,
-                wrzuć zdjęcia do img/p6/ (01.jpg = przód, thumb.jpg = miniatura)
+   Sprzedane:  zmień  sprzedane: false  na  sprzedane: true
+   Nowa rzecz: skopiuj cały blok { ... } jednej rzeczy, nadaj kolejny kod
+               (PN006, PN007...), zdjęcia wrzuć do img/p6/
+               (01.jpg = przód, kolejne numery, thumb.jpg = miniatura)
    ================================================================ */
 
 window.SKLEP = {
-  nazwa: "Prawie Nowe",
-  dopisek: "by Kuba",
-  instagram: "prawienowebykuba",   // nazwa konta na Instagramie (bez @)
+  instagram: "prawienowebykuba",          // nazwa konta na Instagramie (bez @)
   tiktok: "prawienowebykuba",
+  email: "prawienowebykuba@gmail.com",
   wysylka: "Wysyłka w 1–2 dni robocze od zaksięgowania wpłaty, starannie zapakowane.",
 };
 

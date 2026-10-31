@@ -3,59 +3,263 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Prawie Nowe by Kuba</title>
-<meta name="description" content="Markowe ubrania nowe i używane w bardzo dobrym stanie. Każda rzecz w jednym egzemplarzu, z wymiarami w cm i opisanymi wadami.">
+<title>Prawie Nowe by Kuba – markowe ubrania nowe i z drugiej ręki</title>
+<meta name="description" content="Markowe ubrania nowe i używane w bardzo dobrym stanie. Każda rzecz w jednym egzemplarzu, z wymiarami w cm i uczciwie opisanymi wadami. Zamówienia przez Instagram.">
+<meta name="theme-color" content="#1e2b45">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="img/brand/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta property="og:title" content="Prawie Nowe by Kuba">
+<meta property="og:description" content="Markowe ubrania nowe i z drugiej ręki. Każda rzecz w jednym egzemplarzu.">
+<meta property="og:image" content="img/brand/icon-512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="top">
-  <div class="wrap">
-    <a class="brand" href="./"><b>Prawie Nowe</b><span>by Kuba</span></a>
-    <nav class="nav" aria-label="Menu">
-      <a href="#katalog">Katalog</a>
+
+<div class="topbar">
+  <span>Wysyłka w 1–2 dni robocze</span><span class="sep opt">·</span><span class="opt">Zwrot do 14 dni</span><span class="sep opt">·</span><span class="opt">Zamówienia przez Instagram</span>
+</div>
+
+<header class="header" id="top">
+  <div class="header__in">
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+    <nav class="nav" id="nav" aria-label="Główna nawigacja">
+      <a href="#/kolekcja">Kolekcja</a>
+      <a href="#kategorie">Kategorie</a>
       <a href="#jak-kupic">Jak kupić</a>
-      <a href="regulamin.html">Regulamin</a>
-      <a data-ig href="#" target="_blank" rel="noopener">Instagram</a>
+      <a href="#faq">Pytania</a>
     </nav>
+    <a href="#/" class="logo" aria-label="Prawie Nowe by Kuba – strona główna"><img src="img/brand/logo-320.png" alt="Prawie Nowe by Kuba" width="320" height="320"></a>
+    <div class="tools">
+      <a class="tool" data-ig href="#" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/></svg>
+      </a>
+      <button class="tool" id="cartBtn" aria-label="Koszyk">
+        <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M5.5 8.5h13l-1 11h-11z"/><path d="M9 8.5V7a3 3 0 0 1 6 0v1.5"/></svg>
+        <i class="count" id="cartCount" hidden>0</i>
+      </button>
+    </div>
   </div>
 </header>
 
-<main id="katalog">
-  <section class="wrap intro">
-    <h1>Markowe ubrania, prawie nowe</h1>
-    <p>Nowe i używane w bardzo dobrym stanie. Każda rzecz w jednym egzemplarzu, z wymiarami w cm i uczciwie opisanymi wadami. Zamawiasz przez Instagram.</p>
-  </section>
-  <div class="wrap">
-    <div class="chips" id="chips" role="group" aria-label="Kategorie"></div>
-    <div class="grid" id="grid"></div>
-  </div>
+<main>
 
-  <section class="how" id="jak-kupic">
+<!-- ============ STRONA GŁÓWNA ============ -->
+<div id="homeView">
+
+  <section class="hero" aria-label="Wyróżnione rzeczy">
+    <div class="wrap hero__in">
+      <div>
+        <p class="eyebrow">Markowe ubrania · Jelenia Góra</p>
+        <h1>Prawie nowe. <em>Prawdziwie dobre.</em></h1>
+        <p class="lead">Markowe ubrania nowe i z drugiej ręki. Każda rzecz w jednym egzemplarzu, z wymiarami w cm i uczciwie opisanymi wadami.</p>
+        <div class="hero__cta">
+          <a href="#/kolekcja" class="btn btn--dark">Zobacz kolekcję</a>
+          <a href="#jak-kupic" class="btn btn--line">Jak kupić</a>
+        </div>
+        <div class="hero__facts">
+          <div><b id="factCount">5</b>rzeczy w sklepie</div>
+          <div><b>1–2 dni</b>do wysyłki</div>
+          <div><b>14 dni</b>na zwrot</div>
+        </div>
+      </div>
+      <!-- Film zamiast pokazu zdjęć: wrzuć img/hero.mp4 (pionowy 4:5, bez dźwięku, do ok. 8 MB). -->
+      <div class="stage" id="stage">
+        <div class="reel" id="reel">
+          <video id="heroVideo" muted loop playsinline preload="metadata" aria-hidden="true"><source src="img/hero.mp4" type="video/mp4"></video>
+        </div>
+        <div class="stage__cap">
+          <button class="cap" id="heroCap" aria-label="Zobacz wyróżnioną rzecz"></button>
+          <div class="ctrl">
+            <div class="dots" id="heroDots" aria-hidden="true"></div>
+            <button class="pause" id="heroPause" aria-label="Wstrzymaj pokaz" aria-pressed="false"><i></i><i></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="brands" aria-label="Marki w sklepie">
+    <div class="brands__track" id="brandsTrack"></div>
+  </section>
+
+  <section class="collection" id="nowosci">
     <div class="wrap">
-      <h2>Jak kupić</h2>
+      <div class="sechead sechead--row">
+        <div>
+          <p class="eyebrow">Właśnie dodane</p>
+          <h2>Nowości <em>w sklepie</em></h2>
+        </div>
+        <a href="#/kolekcja" class="arrowlink">Cała kolekcja <span>→</span></a>
+      </div>
+      <div class="grid" id="newGrid"></div>
+    </div>
+  </section>
+
+  <section class="cats" id="kategorie">
+    <div class="wrap">
+      <div class="sechead">
+        <p class="eyebrow">Kolekcja</p>
+        <h2>Kupuj według <em>kategorii</em></h2>
+      </div>
+      <div class="cats__grid" id="catGrid"></div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <p>„Dobre ubranie nie kończy się na pierwszym właścicielu.”</p>
+    </div>
+  </section>
+
+  <section class="honest" id="uczciwie">
+    <div class="wrap honest__grid">
+      <div>
+        <p class="eyebrow eyebrow--light">Uczciwie, zanim kupisz</p>
+        <h2>Widzisz dokładnie to,<br>co <em>dostaniesz.</em></h2>
+        <p class="honest__lead">Każdą rzecz sprawdzam osobiście, mierzę i fotografuję, zanim trafi do sklepu. Jeśli coś jest nie tak, piszę o tym wprost.</p>
+      </div>
       <ol class="steps">
-        <li><b>Wybierz rzecz</b><span>Kliknij zdjęcie, sprawdź wymiary, stan i wady.</span></li>
-        <li><b>Napisz na Instagramie</b><span>Przycisk „Zamów przez Instagram" kopiuje wiadomość z kodem rzeczy (np. PN001).</span></li>
-        <li><b>Zapłać BLIK-iem lub przelewem</b><span>W odpowiedzi dostaniesz dane do płatności i koszt wysyłki.</span></li>
-        <li><b>Odbierz paczkę</b><span data-ship></span></li>
+        <li><span>01</span><div><h3>Prawdziwe zdjęcia</h3><p>Na zdjęciach jest dokładnie ten egzemplarz, który dostaniesz. Przód, tył, metka i detale.</p></div></li>
+        <li><span>02</span><div><h3>Wymiary z miarką</h3><p>Mierzę na płasko, w centymetrach. Brakuje wymiaru? Napisz, zmierzę.</p></div></li>
+        <li><span>03</span><div><h3>Wady nazwane po imieniu</h3><p>Każda plama, przetarcie czy spranie jest opisane i pokazane na zdjęciu z numerem.</p></div></li>
       </ol>
     </div>
   </section>
+
+  <section class="buy" id="jak-kupic">
+    <div class="wrap buy__grid">
+      <div>
+        <p class="eyebrow">Jak kupić</p>
+        <h2>Zamawiasz w&nbsp;wiadomości,<br><em>bez zakładania konta.</em></h2>
+        <p class="lead">Każda rzecz ma swój kod. Wystarczy go podać na Instagramie.</p>
+        <ul class="process">
+          <li><b>1</b><span>Dodajesz rzeczy do koszyka albo wybierasz jedną</span></li>
+          <li><b>2</b><span>Przycisk „Zamów przez Instagram” kopiuje wiadomość z kodami</span></li>
+          <li><b>3</b><span>Odpisuję z kosztem wysyłki i danymi do płatności BLIK lub przelewem</span></li>
+          <li><b>4</b><span>Po zaksięgowaniu wpłaty wysyłam paczkę w 1–2 dni robocze</span></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Kupujesz na live?</h3>
+        <p>Na live’ach na TikToku pokazuję rzeczy na żywo. Napisz w komentarzu albo w wiadomości kod z metki, na przykład:</p>
+        <div class="live"><b>PN004</b><span>Kod jest na każdym zdjęciu w sklepie i przy każdej rzeczy.</span></div>
+        <div class="panel__btns">
+          <a class="btn btn--dark btn--full" data-ig href="#" target="_blank" rel="noopener">Napisz na Instagramie</a>
+          <a class="btn btn--line btn--full" data-tt href="#" target="_blank" rel="noopener">TikTok @prawienowebykuba</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="wrap faq__grid">
+      <div class="sechead">
+        <p class="eyebrow">Pytania</p>
+        <h2>Najczęściej <em>pytacie</em></h2>
+      </div>
+      <div>
+        <details><summary>Jak oceniam stan rzeczy?</summary><p>Stosuję cztery stopnie: „Nowy z metką”, „Jak nowy”, „Bardzo dobry” i „Dobry”. Każda wada jest opisana przy rzeczy i pokazana na zdjęciu.</p></details>
+        <details><summary>Jak zapłacić?</summary><p>BLIK-iem na telefon albo przelewem. Dane do płatności i koszt wysyłki podaję w wiadomości, zanim zapłacisz.</p></details>
+        <details><summary>Jak wysyłam zamówienia?</summary><p>Paczkomatem albo kurierem, w zależności od tego, co wybierzesz. Wysyłka w 1–2 dni robocze od zaksięgowania wpłaty.</p></details>
+        <details><summary>Czy mogę zwrócić zakup?</summary><p>Tak, masz 14 dni na zwrot bez podania przyczyny. Koszt odesłania ponosi kupujący. Szczegóły są w <a href="regulamin.html" style="text-decoration:underline">regulaminie</a>.</p></details>
+        <details><summary>Czy rzeczy są oryginalne?</summary><p>Sprzedaję rzeczy markowe z metkami producentów, które pokazuję na zdjęciach. Nie jestem autoryzowanym dystrybutorem marek.</p></details>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ============ KOLEKCJA ============ -->
+<section class="coll" id="collView" hidden>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Okruszki"><a href="#/">Strona główna</a><span>/</span><a href="#/kolekcja">Kolekcja</a><span id="crumbSep" hidden>/</span><b id="crumbNow"></b></nav>
+    <div class="coll__head">
+      <h1 id="collTitle">Kolekcja</h1>
+      <p id="collLead"></p>
+    </div>
+    <div class="filters">
+      <div class="chips" id="chips" role="group" aria-label="Kategorie"></div>
+      <div class="filters__right">
+        <label class="sort"><span>Marka</span><select id="brandSel"></select></label>
+        <label class="sort"><span>Sortuj</span>
+          <select id="sort">
+            <option value="new">Najnowsze</option>
+            <option value="asc">Cena: rosnąco</option>
+            <option value="desc">Cena: malejąco</option>
+          </select>
+        </label>
+      </div>
+    </div>
+    <p class="resultcount" id="resultCount"></p>
+    <div class="grid" id="grid"></div>
+    <div class="emptystate" id="emptyState" hidden>
+      <h3>Nic tu jeszcze nie ma</h3>
+      <p>Spróbuj zmienić filtry.</p>
+      <a href="#/kolekcja" class="btn btn--line">Cała kolekcja</a>
+    </div>
+  </div>
+</section>
+
+<section class="follow">
+  <div class="wrap follow__in">
+    <div>
+      <h2>Bądź pierwszy,<br><em>gdy pojawi się nowa rzecz.</em></h2>
+      <p>Nowości i live’y sprzedażowe najpierw pokazuję na Instagramie i TikToku.</p>
+    </div>
+    <div class="follow__btns">
+      <a class="btn btn--dark" data-ig href="#" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn btn--line" data-tt href="#" target="_blank" rel="noopener">TikTok</a>
+    </div>
+  </div>
+</section>
+
 </main>
 
-<footer class="foot">
-  <div class="wrap">
-    <span>Prawie Nowe by Kuba · zwrot do 14 dni bez podania przyczyny · <a href="mailto:prawienowebykuba@gmail.com">prawienowebykuba@gmail.com</a></span>
-    <nav aria-label="Informacje">
-      <a href="regulamin.html">Regulamin</a>
-      <a href="prywatnosc.html">Prywatność</a>
-      <a data-ig href="#" target="_blank" rel="noopener">Instagram</a>
-      <a data-tt href="#" target="_blank" rel="noopener">TikTok</a>
-    </nav>
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div>
+      <a href="#/" class="footer__logo" aria-label="Prawie Nowe by Kuba"><img src="img/brand/logo-320.png" alt="Prawie Nowe by Kuba" width="320" height="320"></a>
+      <p class="footer__about">Markowe ubrania nowe i z drugiej ręki. Każda rzecz sprawdzona, zmierzona i opisana.</p>
+    </div>
+    <div>
+      <h4>Sklep</h4>
+      <a href="#/kolekcja">Kolekcja</a><a href="#nowosci">Nowości</a><a href="#jak-kupic">Jak kupić</a><a href="#faq">Pytania</a>
+    </div>
+    <div>
+      <h4>Informacje</h4>
+      <a href="regulamin.html">Regulamin</a><a href="regulamin.html#zwroty">Zwroty i reklamacje</a><a href="prywatnosc.html">Polityka prywatności</a>
+    </div>
+    <div>
+      <h4>Kontakt</h4>
+      <a data-mail href="#">prawienowebykuba@gmail.com</a>
+      <a data-ig href="#" target="_blank" rel="noopener">Instagram @prawienowebykuba</a>
+      <a data-tt href="#" target="_blank" rel="noopener">TikTok @prawienowebykuba</a>
+      <span>Jelenia Góra</span>
+    </div>
+  </div>
+  <div class="wrap footer__bottom">
+    <span>© <span id="year"></span> Prawie Nowe by Kuba</span>
+    <span>Nazwy marek należą do ich właścicieli. Nie jestem autoryzowanym dystrybutorem.</span>
   </div>
 </footer>
 
-<dialog id="item" aria-label="Szczegóły rzeczy"></dialog>
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="Koszyk" aria-hidden="true">
+  <div class="drawer__head"><h3>Koszyk</h3><button class="x" id="drawerClose" aria-label="Zamknij koszyk">×</button></div>
+  <div class="drawer__body" id="drawerBody"></div>
+  <div class="drawer__foot" id="drawerFoot"></div>
+</aside>
+
+<div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Szczegóły rzeczy">
+  <div class="modal__box" id="modalBox"></div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="produkty.js"></script>
 <script src="app.js"></script>

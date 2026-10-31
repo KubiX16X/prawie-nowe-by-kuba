@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Prawie Nowe by Kuba</title>
+<meta name="description" content="Markowe ubrania nowe i używane w bardzo dobrym stanie. Każda rzecz w jednym egzemplarzu, z wymiarami w cm i opisanymi wadami.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><b>Prawie Nowe</b><span>by Kuba</span></a>
+    <nav class="nav" aria-label="Menu">
+      <a href="#katalog">Katalog</a>
+      <a href="#jak-kupic">Jak kupić</a>
+      <a href="regulamin.html">Regulamin</a>
+      <a data-ig href="#" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+  </div>
+</header>
+
+<main id="katalog">
+  <section class="wrap intro">
+    <h1>Markowe ubrania, prawie nowe</h1>
+    <p>Nowe i używane w bardzo dobrym stanie. Każda rzecz w jednym egzemplarzu, z wymiarami w cm i uczciwie opisanymi wadami. Zamawiasz przez Instagram.</p>
+  </section>
+  <div class="wrap">
+    <div class="chips" id="chips" role="group" aria-label="Kategorie"></div>
+    <div class="grid" id="grid"></div>
+  </div>
+
+  <section class="how" id="jak-kupic">
+    <div class="wrap">
+      <h2>Jak kupić</h2>
+      <ol class="steps">
+        <li><b>Wybierz rzecz</b><span>Kliknij zdjęcie, sprawdź wymiary, stan i wady.</span></li>
+        <li><b>Napisz na Instagramie</b><span>Przycisk „Zamów przez Instagram" kopiuje wiadomość z kodem rzeczy (np. PN-001).</span></li>
+        <li><b>Zapłać BLIK-iem lub przelewem</b><span>W odpowiedzi dostaniesz dane do płatności i koszt wysyłki.</span></li>
+        <li><b>Odbierz paczkę</b><span data-ship></span></li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>Prawie Nowe by Kuba · zwrot do 14 dni bez podania przyczyny · <a href="mailto:prawienowebykuba@gmail.com">prawienowebykuba@gmail.com</a></span>
+    <nav aria-label="Informacje">
+      <a href="regulamin.html">Regulamin</a>
+      <a href="prywatnosc.html">Prywatność</a>
+      <a data-ig href="#" target="_blank" rel="noopener">Instagram</a>
+      <a data-tt href="#" target="_blank" rel="noopener">TikTok</a>
+    </nav>
+  </div>
+</footer>
+
+<dialog id="item" aria-label="Szczegóły rzeczy"></dialog>
+
+<script src="produkty.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

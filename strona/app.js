@@ -54,6 +54,10 @@
     if (BRANDS.indexOf(p.marka) < 0) BRANDS.push(p.marka);
   });
   BRANDS.sort(function (a, b) { return a.localeCompare(b, 'pl'); });
+  // Dodatkowa kategoria na początku: wszystkie rzeczy w stanie „Nowy z metką”
+  var NOWE = 'Nowe z metką';
+  if (P.some(function (p) { return p.stan === 'Nowy z metką'; })) CATS.unshift(NOWE);
+  function inCat(p, c) { return c === NOWE ? p.stan === 'Nowy z metką' : p.kategoria === c; }
 
   var state = {
     cat: 'Wszystkie', brand: 'Wszystkie', sort: 'new',
@@ -84,13 +88,13 @@
   });
 
   /* ---------- strona główna ---------- */
-  // Kolejność domyślna: najpierw „Nowy z metką”, potem od najnowszych (wyższy kod = nowsza rzecz)
+  // Kolejność sklepu: najpierw „Nowy z metką”, potem po kolei według kodu (PN001, PN002, PN003...)
   function isNew(p) { return p.stan === 'Nowy z metką' ? 0 : 1; }
-  function newest(list) { return list.slice().sort(function (a, b) { return isNew(a) - isNew(b) || num(b) - num(a); }); }
+  function newest(list) { return list.slice().sort(function (a, b) { return isNew(a) - isNew(b) || num(a) - num(b); }); }
   function renderHome() {
     $('#newGrid').innerHTML = newest(available).slice(0, 4).map(cardHTML).join('');
     $('#catGrid').innerHTML = CATS.map(function (c) {
-      var items = P.filter(function (p) { return p.kategoria === c; });
+      var items = P.filter(function (p) { return inCat(p, c); });
       var first = items.filter(function (p) { return !p.sprzedane; })[0] || items[0];
       var n = items.filter(function (p) { return !p.sprzedane; }).length;
       return '<a class="cat" href="#/kolekcja/kat/' + encodeURIComponent(c) + '"><div class="cat__img"><img src="' + img(first, 'thumb') + '" alt="" loading="lazy" width="525" height="700"></div>' +
@@ -145,7 +149,7 @@
   /* ---------- kolekcja ---------- */
   function filtered() {
     var list = P.filter(function (p) {
-      if (state.cat !== 'Wszystkie' && p.kategoria !== state.cat) return false;
+      if (state.cat !== 'Wszystkie' && !inCat(p, state.cat)) return false;
       if (state.brand !== 'Wszystkie' && p.marka !== state.brand) return false;
       return true;
     });
@@ -158,6 +162,7 @@
   function renderColl() {
     var title = 'Kolekcja', lead = 'Wszystkie rzeczy dostępne w sklepie. Każda w jednym egzemplarzu.', crumb = '';
     if (state.brand !== 'Wszystkie') { title = state.brand; lead = 'Rzeczy marki ' + state.brand + '.'; crumb = title; }
+    else if (state.cat === NOWE) { title = NOWE; lead = 'Nowe rzeczy z oryginalną metką sklepową.'; crumb = title; }
     else if (state.cat !== 'Wszystkie') { title = state.cat; lead = 'Rzeczy w kategorii „' + state.cat + '”.'; crumb = title; }
     $('#collTitle').textContent = title; $('#collLead').textContent = lead;
     $('#crumbNow').textContent = crumb; $('#crumbSep').hidden = !crumb;

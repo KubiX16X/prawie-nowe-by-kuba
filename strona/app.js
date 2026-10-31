@@ -104,9 +104,15 @@
       var items = P.filter(function (p) { return inCat(p, c); });
       var first = items.filter(function (p) { return !p.sprzedane; })[0] || items[0];
       var n = items.filter(function (p) { return !p.sprzedane; }).length;
-      return '<a class="cat" href="#/kolekcja/kat/' + encodeURIComponent(c) + '"><div class="cat__img"><img src="' + img(first, 'thumb') + '" alt="" loading="lazy" width="525" height="700"></div>' +
+      var own = img(first, 'thumb'), kz = (window.KATEGORIE || {})[c];
+      var src = kz && kz.zdjecie ? kz.zdjecie : own;
+      return '<a class="cat" href="#/kolekcja/kat/' + encodeURIComponent(c) + '"><div class="cat__img"><img src="' + esc(src) + '" data-fallback="' + esc(own) + '" alt="' + esc(c) + '" loading="lazy" width="525" height="700"></div>' +
         '<div class="cat__lbl"><b>' + esc(c) + '</b><small>' + n + '</small></div></a>';
     }).join('');
+    // gdy zdjęcie kategorii się nie wczyta, pokaż zdjęcie pierwszej rzeczy z kategorii
+    $$('#catGrid img[data-fallback]').forEach(function (im) {
+      im.addEventListener('error', function () { if (im.src.indexOf(im.getAttribute('data-fallback')) < 0) im.src = im.getAttribute('data-fallback'); });
+    });
     // pasek marek – powtórzony, żeby wypełnił szerokość
     var row = '';
     for (var r = 0; r < 4; r++) BRANDS.forEach(function (b) { row += '<span>' + esc(b) + '</span><i></i>'; });
@@ -119,7 +125,7 @@
   var REEL_MS = 4800, reelI = -1, reelT = null, reelPaused = false;
   REEL.forEach(function (p, i) {
     var d = document.createElement('div'); d.className = 'slide';
-    d.innerHTML = '<img src="' + img(p, p.wyciete ? 'w01' : 1) + '" alt="' + esc(p.marka + ' ' + p.tytul) + '"' + (i ? ' loading="lazy"' : '') + '>';
+    d.innerHTML = '<img src="' + img(p, 1) + '" alt="' + esc(p.marka + ' ' + p.tytul) + '"' + (i ? ' loading="lazy"' : '') + '>';
     reel.insertBefore(d, $('#heroVideo'));
   });
   dots.innerHTML = REEL.map(function () { return '<i></i>'; }).join('');

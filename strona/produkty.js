@@ -112,7 +112,7 @@ window.PRODUKTY = [
     rozmiar: "S-M",
     rozmiarMetka: "EUR/USA S-M, MEX 38-40",
     stan: "Dobry",
-    cena: 69,
+    cena: 49,
     sprzedane: false,
     opis: "Luźny, pikowany bezrękawnik ze stójką i odpinanym kapturem (zamek i napy). Zamek przykryty listwą na napy, dwie kieszenie boczne. Ciepła warstwa na jesień.",
     wady: "Jasne plamy na kapturze od zewnątrz i ciemniejsze zabrudzenia wewnątrz kaptura przy zamku (zdjęcia 5 i 6). Kaptur można odpiąć.",

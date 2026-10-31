@@ -84,7 +84,9 @@
   });
 
   /* ---------- strona główna ---------- */
-  function newest(list) { return list.slice().sort(function (a, b) { return num(b) - num(a); }); }
+  // Kolejność domyślna: najpierw „Nowy z metką”, potem od najnowszych (wyższy kod = nowsza rzecz)
+  function isNew(p) { return p.stan === 'Nowy z metką' ? 0 : 1; }
+  function newest(list) { return list.slice().sort(function (a, b) { return isNew(a) - isNew(b) || num(b) - num(a); }); }
   function renderHome() {
     $('#newGrid').innerHTML = newest(available).slice(0, 4).map(cardHTML).join('');
     $('#catGrid').innerHTML = CATS.map(function (c) {

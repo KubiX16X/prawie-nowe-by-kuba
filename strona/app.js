@@ -101,18 +101,13 @@
   function renderHome() {
     $('#newGrid').innerHTML = newest(available).slice(0, 4).map(cardHTML).join('');
     $('#catGrid').innerHTML = CATS.map(function (c) {
-      var items = P.filter(function (p) { return inCat(p, c); });
-      var first = items.filter(function (p) { return !p.sprzedane; })[0] || items[0];
-      var n = items.filter(function (p) { return !p.sprzedane; }).length;
-      var own = img(first, 'thumb'), kz = (window.KATEGORIE || {})[c];
-      var src = kz && kz.zdjecie ? kz.zdjecie : own;
-      return '<a class="cat" href="#/kolekcja/kat/' + encodeURIComponent(c) + '"><div class="cat__img"><img src="' + esc(src) + '" data-fallback="' + esc(own) + '" alt="' + esc(c) + '" loading="lazy" width="525" height="700"></div>' +
-        '<div class="cat__lbl"><b>' + esc(c) + '</b><small>' + n + '</small></div></a>';
+      // kafelek z samym napisem: wieszak z metką, nazwa kategorii kursywą, liczba rzeczy
+      var n = P.filter(function (p) { return inCat(p, c) && !p.sprzedane; }).length;
+      return '<a class="cat" href="#/kolekcja/kat/' + encodeURIComponent(c) + '"><div class="cat__tile">' +
+        '<img class="cat__tag" src="img/brand/wieszak.png" alt="" width="52" height="42">' +
+        '<span class="cat__name">' + esc(c) + '</span>' +
+        '<small class="cat__count">' + n + ' ' + plural(n, 'rzecz', 'rzeczy', 'rzeczy') + '</small></div></a>';
     }).join('');
-    // gdy zdjęcie kategorii się nie wczyta, pokaż zdjęcie pierwszej rzeczy z kategorii
-    $$('#catGrid img[data-fallback]').forEach(function (im) {
-      im.addEventListener('error', function () { if (im.src.indexOf(im.getAttribute('data-fallback')) < 0) im.src = im.getAttribute('data-fallback'); });
-    });
     // pasek marek – powtórzony, żeby wypełnił szerokość
     var row = '';
     for (var r = 0; r < 4; r++) BRANDS.forEach(function (b) { row += '<span>' + esc(b) + '</span><i></i>'; });

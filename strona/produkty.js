@@ -16,17 +16,6 @@ window.SKLEP = {
   wysylka: "Wysyłka w 1–2 dni robocze od zaksięgowania wpłaty, starannie zapakowane.",
 };
 
-/* Zdjęcia kategorii na stronie głównej – darmowe zdjęcia z Pexels (licencja Pexels, bez wymogu podpisu).
-   Nowa kategoria bez wpisu tutaj pokaże zdjęcie pierwszej rzeczy z tej kategorii. */
-window.KATEGORIE = {
-  "Nowe z metką": { zdjecie: "https://images.pexels.com/photos/3812433/pexels-photo-3812433.jpeg?auto=compress&cs=tinysrgb&w=700", zrodlo: "https://www.pexels.com/photo/clothes-on-hangers-hanging-on-clothing-racks-3812433/" },
-  "Swetry": { zdjecie: "https://images.pexels.com/photos/5464589/pexels-photo-5464589.jpeg?auto=compress&cs=tinysrgb&w=700", zrodlo: "https://www.pexels.com/photo/folded-knitted-sweaters-5464589/" },
-  "Bluzy": { zdjecie: "https://images.pexels.com/photos/9594679/pexels-photo-9594679.jpeg?auto=compress&cs=tinysrgb&w=700", zrodlo: "https://www.pexels.com/photo/hoodie-sweaters-hanged-on-a-clothes-rack-9594679/" },
-  "Marynarki": { zdjecie: "https://images.pexels.com/photos/7778886/pexels-photo-7778886.jpeg?auto=compress&cs=tinysrgb&w=700", zrodlo: "https://www.pexels.com/photo/striped-blazer-on-a-clothes-rack-7778886/" },
-  "Kurtki": { zdjecie: "https://images.pexels.com/photos/6045058/pexels-photo-6045058.jpeg?auto=compress&cs=tinysrgb&w=700", zrodlo: "https://www.pexels.com/photo/black-coat-hanging-on-silver-rack-6045058/" },
-  "Kamizelki": { zdjecie: "https://images.pexels.com/photos/16170/pexels-photo-16170.jpeg?auto=compress&cs=tinysrgb&w=700", zrodlo: "https://www.pexels.com/photo/assorted-color-bubble-jackets-hanged-16170/" },
-};
-
 window.PRODUKTY = [
   {
     kod: "PN001",

@@ -17,7 +17,7 @@ window.SKLEP = {
 
 window.PRODUKTY = [
   {
-    kod: "PN-001",
+    kod: "PN001",
     kategoria: "Swetry",
     marka: "Zara",
     tytul: "Sweter z golfem, wełniany, beżowy",
@@ -39,7 +39,7 @@ window.PRODUKTY = [
     // DO SPRAWDZENIA: brak szerokości pod pachami; ciemniejsze miejsce pod golfem na plecach – światło czy plamka?
   },
   {
-    kod: "PN-002",
+    kod: "PN002",
     kategoria: "Bluzy",
     marka: "Zara",
     tytul: "Bluza rozpinana z kapturem, asymetryczna, czarna",
@@ -61,7 +61,7 @@ window.PRODUKTY = [
     // DO SPRAWDZENIA: długość (brak pewnego pomiaru), miejsce pomiaru szerokości i rękawa
   },
   {
-    kod: "PN-003",
+    kod: "PN003",
     kategoria: "Marynarki",
     marka: "Reserved",
     tytul: "Marynarka slim fit z dzianiny, niebieska",
@@ -82,7 +82,7 @@ window.PRODUKTY = [
     // DO SPRAWDZENIA: szerokość pod pachami, rękaw, ramiona; ciemniejsze miejsce na plecach, kropka na rękawie, plamka na podszewce
   },
   {
-    kod: "PN-004",
+    kod: "PN004",
     kategoria: "Kurtki",
     marka: "Adidas",
     tytul: "Kurtka Cold.RDY z kapturem, ocieplana, czarna",
@@ -105,7 +105,7 @@ window.PRODUKTY = [
     // DO SPRAWDZENIA: skład podszewki; czy smugi schodzą w praniu (wtedy stan: Bardzo dobry)
   },
   {
-    kod: "PN-005",
+    kod: "PN005",
     kategoria: "Kamizelki",
     marka: "Zara",
     tytul: "Bezrękawnik pikowany z odpinanym kapturem, czarny",

@@ -155,7 +155,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 /* kategorie */
 .cats{padding:20px 0 110px}
-.cats__grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
+.cats__grid{display:grid;grid-template-columns:repeat(var(--cats,6),minmax(0,1fr));gap:16px}
 .cat{display:block;position:relative}
 .cat__tile{aspect-ratio:4/5;max-width:100%;background:var(--photo);border:1px solid var(--line);padding:22px;display:flex;flex-direction:column;justify-content:space-between;transition:border-color .35s var(--ease),background .35s var(--ease)}
 .cat__tag{width:34px;height:auto}

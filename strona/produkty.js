@@ -18,28 +18,6 @@ window.SKLEP = {
 
 window.PRODUKTY = [
   {
-    kod: "PN001",
-    kategoria: "Swetry",
-    marka: "Zara",
-    tytul: "Sweter z golfem, wełniany, beżowy",
-    rozmiar: "M",
-    rozmiarMetka: "EUR M / USA M / MEX 40",
-    stan: "Nowy z metką",
-    cena: 170,
-    sprzedane: false,
-    opis: "Gruba, miękka dzianina z wełną, szeroki golf i rękawy typu raglan. Ciepły solo albo pod płaszcz. Cena z metki sklepowej: 199 zł.",
-    wady: null,
-    wymiary: [
-      ["Długość (z golfem)", "77 cm"],
-      ["Rękaw (raglan, od golfu)", "64 cm"],
-    ],
-    material: "72% wełna, 28% poliamid",
-    kolor: "beżowy",
-    zdjecia: 7,
-    folder: "p1",
-    // DO SPRAWDZENIA: brak szerokości pod pachami; ciemniejsze miejsce pod golfem na plecach – światło czy plamka?
-  },
-  {
     kod: "PN002",
     kategoria: "Bluzy",
     marka: "Zara",

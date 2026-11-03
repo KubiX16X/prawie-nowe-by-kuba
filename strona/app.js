@@ -69,6 +69,7 @@
   var NOWE = 'Nowe z metką';
   if (P.some(function (p) { return p.stan === 'Nowy z metką'; })) CATS.unshift(NOWE);
   function inCat(p, c) { return c === NOWE ? p.stan === 'Nowy z metką' : p.kategoria === c; }
+  if (CATS.indexOf(NOWE) < 0) $$('[data-nowe]').forEach(function (el) { el.hidden = true; });
 
   var state = {
     cat: 'Wszystkie', brand: 'Wszystkie', sort: 'new',
@@ -104,6 +105,7 @@
   function newest(list) { return list.slice().sort(function (a, b) { return isNew(a) - isNew(b) || num(a) - num(b); }); }
   function renderHome() {
     $('#newGrid').innerHTML = newest(available).slice(0, 4).map(cardHTML).join('');
+    $('#catGrid').style.setProperty('--cats', Math.min(Math.max(CATS.length, 4), 6));
     $('#catGrid').innerHTML = CATS.map(function (c) {
       // kafelek z samym napisem: wieszak z metką, nazwa kategorii kursywą, liczba rzeczy
       var n = P.filter(function (p) { return inCat(p, c) && !p.sprzedane; }).length;

@@ -244,6 +244,8 @@ details p{padding:0 40px 26px 0;color:var(--muted);max-width:580px}
 .resultcount{font-size:13px;color:var(--muted);margin-bottom:30px}
 .emptystate{text-align:center;padding:70px 0;display:grid;gap:16px;justify-items:center;color:var(--muted)}
 .emptystate h3{color:var(--ink);font-size:34px}
+.emptystate p{max-width:46ch}
+.emptystate__btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:6px}
 
 /* koszyk */
 .overlay{position:fixed;inset:0;background:rgba(30,43,69,.5);opacity:0;pointer-events:none;transition:opacity .45s var(--ease);z-index:60}

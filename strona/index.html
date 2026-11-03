@@ -199,9 +199,12 @@
     <p class="resultcount" id="resultCount"></p>
     <div class="grid" id="grid"></div>
     <div class="emptystate" id="emptyState" hidden>
-      <h3>Nic tu jeszcze nie ma</h3>
-      <p>Spróbuj zmienić filtry.</p>
-      <a href="#/kolekcja" class="btn btn--line">Cała kolekcja</a>
+      <h3 id="emptyTitle">Na razie pusto</h3>
+      <p id="emptyMsg">Spróbuj zmienić filtry.</p>
+      <div class="emptystate__btns">
+        <a href="#/kolekcja" class="btn btn--dark">Zobacz całą kolekcję</a>
+        <a class="btn btn--line" data-ig href="#" target="_blank" rel="noopener">Obserwuj na Instagramie</a>
+      </div>
     </div>
   </div>
 </section>

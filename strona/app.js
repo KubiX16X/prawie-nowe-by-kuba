@@ -59,7 +59,7 @@
 
   var available = P.filter(function (p) { return !p.sprzedane; });
   $('#factCount').textContent = available.length;
-  var CATS = [], BRANDS = [];
+  var CATS = (window.KATEGORIE || []).slice(), BRANDS = [];
   P.forEach(function (p) {
     if (CATS.indexOf(p.kategoria) < 0) CATS.push(p.kategoria);
     if (BRANDS.indexOf(p.marka) < 0) BRANDS.push(p.marka);
@@ -67,9 +67,8 @@
   BRANDS.sort(function (a, b) { return a.localeCompare(b, 'pl'); });
   // Dodatkowa kategoria na początku: wszystkie rzeczy w stanie „Nowy z metką”
   var NOWE = 'Nowe z metką';
-  if (P.some(function (p) { return p.stan === 'Nowy z metką'; })) CATS.unshift(NOWE);
+  if (CATS.indexOf(NOWE) < 0) CATS.unshift(NOWE);
   function inCat(p, c) { return c === NOWE ? p.stan === 'Nowy z metką' : p.kategoria === c; }
-  if (CATS.indexOf(NOWE) < 0) $$('[data-nowe]').forEach(function (el) { el.hidden = true; });
 
   var state = {
     cat: 'Wszystkie', brand: 'Wszystkie', sort: 'new',
@@ -112,7 +111,7 @@
       return '<a class="cat" href="#/kolekcja/kat/' + encodeURIComponent(c) + '"><div class="cat__tile">' +
         '<img class="cat__tag" src="img/brand/wieszak.png" alt="" width="52" height="42">' +
         '<span class="cat__name">' + esc(c) + '</span>' +
-        '<small class="cat__count">' + n + ' ' + plural(n, 'rzecz', 'rzeczy', 'rzeczy') + '</small></div></a>';
+        '<small class="cat__count">' + (n ? n + ' ' + plural(n, 'rzecz', 'rzeczy', 'rzeczy') : 'Wkrótce') + '</small></div></a>';
     }).join('');
     // pasek marek – powtórzony, żeby wypełnił szerokość
     var row = '';
@@ -191,6 +190,14 @@
     $('#resultCount').textContent = n + ' ' + plural(n, 'rzecz dostępna', 'rzeczy dostępne', 'rzeczy dostępnych');
     $('#grid').innerHTML = list.map(cardHTML).join('');
     $('#emptyState').hidden = list.length > 0; $('#grid').hidden = !list.length;
+    $('#resultCount').hidden = !list.length;
+    if (!list.length) {
+      var nowe = state.cat === NOWE;
+      $('#emptyTitle').textContent = 'Na razie pusto';
+      $('#emptyMsg').textContent = nowe
+        ? 'Chwilowo nie mam rzeczy nowych z metką. Nowe dostawy pokazuję najpierw na Instagramie i TikToku.'
+        : (state.cat !== 'Wszystkie' ? 'W kategorii „' + state.cat + '” chwilowo nic nie ma. Nowe rzeczy pokazuję najpierw na Instagramie i TikToku.' : 'Spróbuj zmienić filtry.');
+    }
   }
   $('#chips').addEventListener('click', function (e) {
     var b = e.target.closest('.chip'); if (!b) return;

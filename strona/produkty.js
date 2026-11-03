@@ -16,6 +16,10 @@ window.SKLEP = {
   wysylka: "Wysyłka w 1–2 dni robocze od zaksięgowania wpłaty, starannie zapakowane.",
 };
 
+/* Stałe kategorie – widać je zawsze, także gdy są puste (wtedy klient widzi „Na razie pusto”).
+   Nowa kategoria w rzeczy (pole kategoria) doda się sama na końcu. */
+window.KATEGORIE = ["Nowe z metką", "Swetry", "Bluzy", "Marynarki", "Kurtki", "Kamizelki"];
+
 window.PRODUKTY = [
   {
     kod: "PN002",

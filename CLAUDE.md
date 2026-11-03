@@ -10,5 +10,7 @@ Poniższe ustalenia są nowsze i mają pierwszeństwo.
   Nie pytam o początek metra. Pytam tylko, gdy końca nie da się odczytać albo gdy wymiaru nie ma.
 - Ceny: nie wyceniam sam. Szukam w internecie, po ile chodzą te rzeczy nowe z metką,
   i podaję ceny w bloku kodu (okienku) ze źródłami. Cenę sprzedaży ustala Kuba.
+- Tytuły: każde słowo zaczyna się wielką literą (np. „Nike Bluza Z Kapturem Szara L”).
+  Oznaczenia zostają jak są (NA-KD, ONLY, H&M, Dri-FIT, XL, S/32).
 - Tytuły i opisy zbieram w jednym pliku txt w katalogu ogloszenia/ (jedna rzecz = jeden katalog).
 - Gdy nie jestem pewny – pytam.

@@ -104,7 +104,7 @@
   function newest(list) { return list.slice().sort(function (a, b) { return isNew(a) - isNew(b) || num(a) - num(b); }); }
   function renderHome() {
     $('#newGrid').innerHTML = newest(available).slice(0, 4).map(cardHTML).join('');
-    $('#catGrid').style.setProperty('--cats', Math.min(Math.max(CATS.length, 4), 6));
+    $('#catGrid').style.setProperty('--cats', CATS.length <= 6 ? Math.max(CATS.length, 4) : Math.min(Math.ceil(CATS.length / 2), 6));
     $('#catGrid').innerHTML = CATS.map(function (c) {
       // kafelek z samym napisem: wieszak z metką, nazwa kategorii kursywą, liczba rzeczy
       var n = P.filter(function (p) { return inCat(p, c) && !p.sprzedane; }).length;
@@ -312,7 +312,7 @@
           '<div><dt>Stan</dt><dd>' + esc(p.stan) + '</dd></div>' +
           (p.wady ? '<div class="warn"><dt>Wady</dt><dd>' + esc(p.wady) + '</dd></div>' : '') +
           '<div><dt>Wymiary</dt><dd>' + meas + '</dd></div>' +
-          '<div><dt>Materiał</dt><dd>' + esc(p.material) + '</dd></div>' +
+          (p.material ? '<div><dt>Materiał</dt><dd>' + esc(p.material) + '</dd></div>' : '') +
           '<div><dt>Kolor</dt><dd>' + esc(p.kolor) + '</dd></div>' +
           '<div><dt>Wysyłka</dt><dd>' + esc(S.wysylka) + '</dd></div>' +
         '</dl>' +

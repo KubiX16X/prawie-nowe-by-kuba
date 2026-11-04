@@ -37,4 +37,6 @@ Poniższe ustalenia są nowsze i mają pierwszeństwo.
 - Format: tytuł, CENA (podaje Kuba – jeśli nie poda, pytam), zdanie z korzyścią (►),
   wyliczenia • (STAN, WADA, ROZMIAR, WYMIARY, DETALE, MATERIAŁ), potem:
   „ZAMÓWIENIA: przez stronę prawienowe.pages.dev, na WhatsAppie lub Instagramie, a także w wiadomości na TikToku.”
-  i zdanie o nadaniu do 18:00, na końcu hashtagi z #prawienowe. Bez emoji, bez numeru telefonu na górze.
+  i zdanie o nadaniu do 18:00. Bez emoji, bez numeru telefonu na górze.
+- Hashtagi na TikToku: maksymalnie 5, najpopularniejsze: marka (jeśli znana), rodzaj rzeczy
+  i popularne ogólne (np. #moda, #outfit, #dlaciebie).

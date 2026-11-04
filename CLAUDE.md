@@ -29,3 +29,12 @@ Poniższe ustalenia są nowsze i mają pierwszeństwo.
   OLX i Vinted nie wyświetlają pogrubień.
 - Do ustalenia z Kubą: numer telefonu na Vinted (zasady Vinted zabraniają kontaktu w opisie).
   Do tego czasu numer jest na górze każdego opisu.
+
+## Tylko TikTok (od 4.11.2026) – obowiązuje zamiast trybu OLX/Vinted
+- Kuba chce tylko opisy na TikToka. Bez opisów OLX/Vinted, bez 5 tytułów i 5 propozycji cen,
+  chyba że o nie poprosi.
+- Każdą rzecz dopisuję do pliku ogloszenia/tiktok-RRRR-MM-DD.txt i wysyłam plik.
+- Format: tytuł, CENA (podaje Kuba – jeśli nie poda, pytam), zdanie z korzyścią (►),
+  wyliczenia • (STAN, WADA, ROZMIAR, WYMIARY, DETALE, MATERIAŁ), potem:
+  „ZAMÓWIENIA: przez stronę prawienowe.pages.dev, na WhatsAppie lub Instagramie, a także w wiadomości na TikToku.”
+  i zdanie o nadaniu do 18:00, na końcu hashtagi z #prawienowe. Bez emoji, bez numeru telefonu na górze.

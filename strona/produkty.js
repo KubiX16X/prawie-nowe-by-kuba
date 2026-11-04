@@ -44,27 +44,6 @@ window.PRODUKTY = [
     // DO SPRAWDZENIA: długość (brak pewnego pomiaru), miejsce pomiaru szerokości i rękawa
   },
   {
-    kod: "PN003",
-    kategoria: "Marynarki",
-    marka: "Reserved",
-    tytul: "Marynarka slim fit z dzianiny, niebieska",
-    rozmiar: "M",
-    rozmiarMetka: "M, slim fit",
-    stan: "Bardzo dobry",
-    cena: 79,
-    sprzedane: false,
-    opis: "Dwuguzikowa marynarka z miękkiej, teksturowanej dzianiny w niebieskim melanżu. Kieszeń na piersi i dwie boczne, guziki przy mankietach z czerwoną nitką. Elegancka, a wygodna: do jeansów, chinosów i koszuli.",
-    wady: null,
-    wymiary: [
-      ["Długość (od kołnierza)", "ok. 75 cm"],
-    ],
-    material: "84% poliester, 16% bawełna. Podszewka: 100% poliester.",
-    kolor: "niebieski melanż",
-    zdjecia: 10,
-    folder: "p3",
-    // DO SPRAWDZENIA: szerokość pod pachami, rękaw, ramiona; ciemniejsze miejsce na plecach, kropka na rękawie, plamka na podszewce
-  },
-  {
     kod: "PN004",
     kategoria: "Kurtki",
     marka: "Adidas",

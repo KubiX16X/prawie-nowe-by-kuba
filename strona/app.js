@@ -62,7 +62,7 @@
   var CATS = (window.KATEGORIE || []).slice(), BRANDS = [];
   P.forEach(function (p) {
     if (CATS.indexOf(p.kategoria) < 0) CATS.push(p.kategoria);
-    if (BRANDS.indexOf(p.marka) < 0) BRANDS.push(p.marka);
+    if (!p.sprzedane && BRANDS.indexOf(p.marka) < 0) BRANDS.push(p.marka);
   });
   BRANDS.sort(function (a, b) { return a.localeCompare(b, 'pl'); });
   // Dodatkowa kategoria na początku: wszystkie rzeczy w stanie „Nowy z metką”
@@ -161,7 +161,8 @@
 
   /* ---------- kolekcja ---------- */
   function filtered() {
-    var list = P.filter(function (p) {
+    // Sprzedane rzeczy znikają z oferty (link do nich nadal pokazuje „Sprzedane”)
+    var list = available.filter(function (p) {
       if (state.cat !== 'Wszystkie' && !inCat(p, state.cat)) return false;
       if (state.brand !== 'Wszystkie' && p.marka !== state.brand) return false;
       return true;

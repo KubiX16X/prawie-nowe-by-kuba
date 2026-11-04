@@ -40,3 +40,9 @@ Poniższe ustalenia są nowsze i mają pierwszeństwo.
   i zdanie o nadaniu do 18:00. Bez emoji, bez numeru telefonu na górze.
 - Hashtagi na TikToku: maksymalnie 5, najpopularniejsze: marka (jeśli znana), rodzaj rzeczy
   i popularne ogólne (np. #moda, #outfit, #dlaciebie).
+
+## Instagram (od 4.11.2026)
+- Plik ogloszenia/instagram-RRRR-MM-DD.txt: bio na górze, potem te same opisy co na TikToku.
+- Różnice: „ZAMÓWIENIA: napisz wiadomość na Instagramie lub WhatsAppie albo zamów przez stronę
+  prawienowe.pages.dev (link w bio).”, maksymalnie 5 hashtagów (np. marka, rodzaj, #outfit, #ootd).
+- Bio: max 150 znaków, bez emoji, link w polu „Linki”.

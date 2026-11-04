@@ -9,12 +9,12 @@ BIO
 NAZWA (pole „Imię i nazwisko”, max 30 znaków):
 Prawie Nowe by Kuba
 
-BIO – wersja 1 (138/150 znaków):
+BIO – wersja 1 (137/150 znaków):
 Markowe ubrania nowe i jak nowe – Zara, Nike, Adidas i inne
 Wysyłka tego samego dnia (do 18:00)
 Zamówienia: DM, WhatsApp lub strona niżej
 
-BIO – wersja 2, z numerem WhatsApp (124/150 znaków):
+BIO – wersja 2, z numerem WhatsApp (109/150 znaków):
 Markowe ubrania nowe i jak nowe
 Opłacone do 18:00 wysyłam tego samego dnia
 Zamów: DM lub WhatsApp 570 005 150

@@ -161,7 +161,7 @@ window.PRODUKTY = [
     rozmiarMetka: "L",
     stan: "Bardzo dobry",
     cena: 39,
-    sprzedane: false,
+    sprzedane: true,
     opis: "Dopasowane spodenki z szerokim pasem w kształcie litery V z przodu. Logo NIKE PRO na pasie, logo Swoosh na nogawce.",
     wady: "Nadruk z rozmiarem od wewnątrz pasa odkleja się na brzegach (zdjęcie 2).",
     wymiary: [],

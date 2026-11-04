@@ -25,4 +25,7 @@ Poniższe ustalenia są nowsze i mają pierwszeństwo.
 - Na samej górze opisu numer: 5-7-0-0-0-5-1-5-0
 - Zamiast „Wysyłka w 1–2 dni robocze” zawsze zdanie:
   „Przedmiot posiadam fizycznie na stanie. Zakupy opłacone do godziny 18:00 nadaję do paczkomatu jeszcze tego samego dnia.”
-- Do ustalenia z Kubą: numer telefonu na Vinted (zasady Vinted) i pogrubienia (OLX i Vinted ich nie wyświetlają).
+- Zamiast pogrubień: słowa-kotwice WIELKIMI LITERAMI na początku linii (np. „STAN:”, „WYMIARY:”).
+  OLX i Vinted nie wyświetlają pogrubień.
+- Do ustalenia z Kubą: numer telefonu na Vinted (zasady Vinted zabraniają kontaktu w opisie).
+  Do tego czasu numer jest na górze każdego opisu.

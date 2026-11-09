@@ -26,6 +26,14 @@
     for (i = 1; i <= p.zdjecia; i++) list.push(pad(i));
     return list;
   }
+  // Rabat: cenaPrzed to najniższa cena z 30 dni przed obniżką (wymóg prawa), pokazywana jako przekreślona
+  function promo(p) { return !p.sprzedane && p.cenaPrzed > p.cena; }
+  function pct(p) { return Math.round((1 - p.cena / p.cenaPrzed) * 100); }
+  function priceHTML(p, cls) {
+    return promo(p)
+      ? '<s class="was">' + money(p.cenaPrzed) + '</s> <span class="' + cls + ' is-sale">' + money(p.cena) + '</span>'
+      : '<span class="' + cls + '">' + money(p.cena) + '</span>';
+  }
   function num(p) { return parseInt(String(p.kod).replace(/\D/g, ''), 10) || 0; }
   function plural(n, a, b, c) { return n === 1 ? a : (n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? b : c); }
   function store(key, val) {
@@ -79,13 +87,14 @@
   function cardHTML(p, i) {
     var badge = p.sprzedane ? '<span class="badge badge--dark">Sprzedane</span>'
       : (p.stan === 'Nowy z metką' ? '<span class="badge badge--terra">Nowy z metką</span>' : '');
+    if (promo(p)) badge += '<span class="badge badge--sale">−' + pct(p) + '%</span>';
     return '<article class="card' + (p.sprzedane ? ' is-sold' : '') + '" style="animation-delay:' + (i * 60) + 'ms">' +
       '<div class="card__img" data-open="' + esc(p.kod) + '" role="button" tabindex="0" aria-label="Szczegóły: ' + esc(p.marka + ' ' + p.tytul) + '">' +
         badge + '<img src="' + img(p, 'thumb') + '" alt="' + esc(p.marka + ' ' + p.tytul) + '" loading="lazy" width="525" height="700">' +
         '<span class="code">' + esc(p.kod) + '</span><span class="quick">Zobacz szczegóły</span></div>' +
       '<div class="card__info"><span class="card__brand">' + esc(p.marka) + ' · rozm. ' + esc(p.rozmiar) + '</span>' +
         '<span class="card__name" data-open="' + esc(p.kod) + '">' + esc(p.tytul) + '</span>' +
-        '<div class="card__meta"><span class="card__price">' + money(p.cena) + '</span><span class="card__cond">' + esc(p.stan) + '</span></div></div>' +
+        '<div class="card__meta"><span class="card__prices">' + priceHTML(p, 'card__price') + '</span><span class="card__cond">' + esc(p.stan) + '</span></div></div>' +
       '</article>';
   }
   document.addEventListener('click', function (e) {
@@ -140,7 +149,7 @@
     });
     var p = REEL[reelI];
     cap.setAttribute('data-open', p.kod);
-    cap.innerHTML = '<small>' + esc(p.marka) + ' · ' + esc(p.kod) + '</small><strong>' + esc(p.tytul) + '</strong><em>' + money(p.cena) + ' · rozm. ' + esc(p.rozmiar) + '</em>';
+    cap.innerHTML = '<small>' + esc(p.marka) + ' · ' + esc(p.kod) + '</small><strong>' + esc(p.tytul) + '</strong><em>' + (promo(p) ? '<s>' + money(p.cenaPrzed) + '</s> ' : '') + money(p.cena) + ' · rozm. ' + esc(p.rozmiar) + '</em>';
   }
   function reelStart() { clearInterval(reelT); reelT = setInterval(function () { if (!reelPaused && !document.hidden) showSlide(reelI + 1); }, REEL_MS); }
   showSlide(0); reelStart();
@@ -306,7 +315,8 @@
         '<button class="arrow prev" aria-label="Poprzednie zdjęcie">‹</button><button class="arrow next" aria-label="Następne zdjęcie">›</button>' +
         '<span class="gcount" id="gcount">1 / ' + ph.length + '</span></div>' +
       '<div class="modal__body"><span class="card__brand">' + esc(p.marka) + '</span><h3>' + esc(p.tytul) + '</h3>' +
-        '<div class="modal__price"><strong>' + money(p.cena) + '</strong><span>KOD ' + esc(p.kod) + '</span></div>' +
+        '<div class="modal__price">' + (promo(p) ? '<strong class="is-sale">' + money(p.cena) + '</strong><s class="was">' + money(p.cenaPrzed) + '</s><em class="off">−' + pct(p) + '%</em>' : '<strong>' + money(p.cena) + '</strong>') + '<span>KOD ' + esc(p.kod) + '</span></div>' +
+        (promo(p) ? '<p class="omni">Najniższa cena z 30 dni przed obniżką: ' + money(p.cenaPrzed) + '</p>' : '') +
         '<p class="modal__lead">' + esc(p.opis) + '</p>' +
         '<dl class="specs">' +
           '<div><dt>Rozmiar</dt><dd><b>' + esc(p.rozmiar) + '</b> (metka: ' + esc(p.rozmiarMetka) + ')</dd></div>' +

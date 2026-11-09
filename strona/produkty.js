@@ -2,6 +2,8 @@
    PRAWIE NOWE BY KUBA – dane sklepu
    To jedyny plik, który zmieniasz przy dodawaniu i sprzedawaniu rzeczy.
 
+   Sprzedane i ceny najprościej zmieniać w panelu: prawienowe.pages.dev/admin.html
+   (cenaPrzed = przekreślona cena przy rabacie, historiaCen = daty zmian cen; uzupełnia je panel)
    Sprzedane:  zmień  sprzedane: false  na  sprzedane: true
    Nowa rzecz: skopiuj cały blok { ... } jednej rzeczy, nadaj kolejny kod
                (PN006, PN007...), zdjęcia wrzuć do img/p6/
@@ -30,6 +32,8 @@ window.PRODUKTY = [
     rozmiarMetka: "EUR S / USA S",
     stan: "Dobry",
     cena: 30,
+    cenaPrzed: 59,
+    historiaCen: [["2026-11-01", 59], ["2026-11-09", 30]],
     sprzedane: false,
     opis: "Asymetryczny krój: ukośny zamek, wstawki z innej dzianiny, surowe krawędzie, boczny zamek przy dole i mały haft na piersi. Wyrazisty streetwear.",
     wady: "Strzępienie przy lewym mankiecie, wystrzępione miejsce przy dolnej części zamka i przetarte krawędzie kieszeni. Surowe krawędzie to element projektu.",
@@ -52,6 +56,8 @@ window.PRODUKTY = [
     rozmiarMetka: "UK M / US M / EU M",
     stan: "Dobry",
     cena: 79,
+    cenaPrzed: 119,
+    historiaCen: [["2026-11-01", 120], ["2026-11-04", 119], ["2026-11-09", 79]],
     sprzedane: false,
     opis: "Elastyczna kurtka z linii Cold.RDY, rozpinana na całej długości, z kapturem. W środku polar w korpusie i kapturze. Kieszenie na zamek z odblaskowymi detalami, ściągacze z napisem COLD.RDY.",
     wady: "Drobne jasne smugi na przodzie (zdjęcie 7) i lekko zbity polar przy mankiecie (zdjęcie 5).",
@@ -75,6 +81,8 @@ window.PRODUKTY = [
     rozmiarMetka: "EUR/USA S-M, MEX 38-40",
     stan: "Dobry",
     cena: 35,
+    cenaPrzed: 39,
+    historiaCen: [["2026-11-01", 49], ["2026-11-04", 39], ["2026-11-09", 35]],
     sprzedane: false,
     opis: "Luźny, pikowany bezrękawnik ze stójką i odpinanym kapturem (zamek i napy). Zamek przykryty listwą na napy, dwie kieszenie boczne. Ciepła warstwa na jesień.",
     wady: "Jasne plamy na kapturze od zewnątrz i ciemniejsze zabrudzenia wewnątrz kaptura przy zamku (zdjęcia 5 i 6). Kaptur można odpiąć.",
@@ -96,6 +104,8 @@ window.PRODUKTY = [
     rozmiarMetka: "EU 38",
     stan: "Nowy z metką",
     cena: 159,
+    cenaPrzed: 219,
+    historiaCen: [["2026-11-03", 220], ["2026-11-04", 219], ["2026-11-09", 159]],
     sprzedane: false,
     opis: "Model Short Scarf Detailed Coat: szeroki krój bez kołnierza, obniżona linia ramion. Odpinany szal w komplecie (200 cm). Kryte zapięcie na 4 napy, zapasowa napa przy metce. Z podszewką i kieszeniami. Pielęgnacja: tylko czyszczenie chemiczne.",
     wady: null,
@@ -118,6 +128,8 @@ window.PRODUKTY = [
     rozmiarMetka: "S/32",
     stan: "Nowy z metką",
     cena: 119,
+    cenaPrzed: 159,
+    historiaCen: [["2026-11-03", 160], ["2026-11-04", 159], ["2026-11-09", 119]],
     sprzedane: false,
     opis: "Proste nogawki i średni stan, kolor Light Blue Denim. Klasyczne 5 kieszeni, zamek i guzik, naszywka z logo z tyłu na pasku. Cena z metki: 229,99 zł.",
     wady: null,
@@ -139,6 +151,8 @@ window.PRODUKTY = [
     rozmiarMetka: "L, model FX-9050",
     stan: "Nowy z metką",
     cena: 99,
+    cenaPrzed: 129,
+    historiaCen: [["2026-11-03", 130], ["2026-11-04", 129], ["2026-11-09", 99]],
     sprzedane: false,
     opis: "Szerokie nogawki, klasyczne 5 kieszeni, zamek i guzik. Jaśniejsze przecierki na udach i pod tylnymi kieszeniami to element projektu.",
     wady: null,
@@ -179,6 +193,7 @@ window.PRODUKTY = [
     rozmiarMetka: "EUR 146/152, US 10-12Y",
     stan: "Nowy bez metki",
     cena: 39,
+    historiaCen: [["2026-11-03", 40], ["2026-11-04", 39]],
     sprzedane: false,
     opis: "Naszywany napis NYC, granatowy z białym obszyciem. Okrągły dekolt z trójkątną wstawką, mankiety w granatowe paski. Od środka miękki meszek, przy karku tasiemka w paski.",
     wady: null,
@@ -201,6 +216,8 @@ window.PRODUKTY = [
     rozmiarMetka: "EUR XL / USA L / MEX 36 / UK 16",
     stan: "Nowy z metką",
     cena: 129,
+    cenaPrzed: 229,
+    historiaCen: [["2026-11-03", 230], ["2026-11-04", 229], ["2026-11-09", 129]],
     sprzedane: false,
     opis: "Lekka dzianina na wiosnę i jesień, nadruk z niebieskimi i zielonymi owocami na czarnym tle. Okrągły dekolt, długi rękaw, jasne wykończenie przy dekolcie i na dole. Pielęgnacja: prać i prasować na lewej stronie.",
     wady: null,

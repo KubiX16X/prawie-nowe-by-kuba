@@ -152,6 +152,13 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .card__price{font-weight:400;font-variant-numeric:tabular-nums;white-space:nowrap}
 .card__cond{font-size:12px;color:var(--muted)}
 .is-sold .card__price{text-decoration:line-through;color:var(--muted)}
+.badge--sale{left:auto;right:14px;background:var(--terra);color:#fff;letter-spacing:.08em;font-weight:500}
+.card__prices{display:inline-flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+.was{color:var(--muted);font-size:.86em;text-decoration:line-through;font-weight:400;white-space:nowrap}
+.is-sale{color:var(--terra-text);font-weight:500}
+.modal__price .was{font-size:18px}
+.modal__price .off{font-style:normal;font-size:12px;font-weight:500;letter-spacing:.06em;background:var(--terra);color:#fff;padding:3px 8px}
+.omni{font-size:12px;color:var(--muted);margin:-12px 0 18px}
 
 /* kategorie */
 .cats{padding:20px 0 110px}

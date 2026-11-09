@@ -38,6 +38,16 @@
   .row .t { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; font-size:14px; }
   .row .m { color:var(--muted); font-size:13px; }
   .row .act { display:flex; flex-direction:column; gap:6px; align-items:flex-end; flex:0 0 auto; }
+  .row { flex-wrap:wrap; }
+  .row .was { text-decoration:line-through; margin-right:4px; white-space:nowrap; }
+  .row .now, .row .off { white-space:nowrap; display:inline-block; }
+  .row .now { color:var(--terra-text); font-weight:600; }
+  .row .off { background:var(--terra); color:#fff; font-size:11px; font-weight:600; padding:1px 6px; border-radius:6px; margin-left:4px; }
+  .edit { flex-basis:100%; border-top:1px solid var(--line); padding-top:12px; margin-top:2px; }
+  .edit .line { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+  .edit input { width:110px; padding:10px 12px; border:1px solid var(--line); border-radius:10px; font:inherit; font-size:18px; background:#fff; color:var(--ink); }
+  .edit .prev { color:var(--muted); font-size:13px; margin:8px 0 0; }
+  .btn--sm { min-height:38px; padding:0 14px; font-size:14px; }
   .row.sold { opacity:.75; }
   .row.sold img { filter:grayscale(1); }
   .confirm { font-size:13px; color:var(--terra-text); font-weight:500; }
@@ -52,7 +62,7 @@
 <div class="wrap">
   <header>
     <img src="img/brand/logo-320.png" alt="">
-    <div><h1>Panel sklepu</h1><small>Oznaczanie sprzedanych rzeczy</small></div>
+    <div><h1>Panel sklepu</h1><small>Sprzedane rzeczy i ceny</small></div>
     <button class="out" id="logout" hidden>Wyloguj</button>
   </header>
 
@@ -80,7 +90,7 @@
     <div id="listA"></div>
     <h2>Sprzedane <span id="cntS"></span></h2>
     <div id="listS"></div>
-    <p class="hint">Po kliknięciu strona sklepu odświeża się sama w ok. 1–2 minuty. Sprzedana rzecz znika z oferty, a przyciskiem „Przywróć” wraca.</p>
+    <p class="hint">Po każdej zmianie strona sklepu odświeża się sama w ok. 1–2 minuty. Sprzedana rzecz znika z oferty, a przyciskiem „Przywróć” wraca. Niższa cena działa jak rabat: stara cena jest przekreślona, a przy rzeczy pojawia się procent zniżki.</p>
   </section>
 
   <p id="loading" class="empty">Ładowanie…</p>
@@ -93,7 +103,7 @@
   var REPO = 'KubiX16X/prawie-nowe-by-kuba', BRANCH = 'sklep', PATH = 'strona/produkty.js';
   var API = 'https://api.github.com/repos/' + REPO + '/contents/' + PATH;
   var KEY = 'pn_admin_token';
-  var token = null, sha = null, src = '', items = [], busy = false, pending = null;
+  var token = null, sha = null, src = '', items = [], busy = false, pending = null, editing = null;
 
   function $(s) { return document.querySelector(s); }
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
@@ -133,16 +143,31 @@
       });
   }
 
+  function promo(p) { return p.cenaPrzed > p.cena; }
   function rowHTML(p) {
     var s = !!p.sprzedane, k = esc(p.kod);
     var act = pending === p.kod
       ? '<span class="confirm">' + (s ? 'Przywrócić?' : 'Sprzedane?') + '</span><span style="display:flex;gap:6px"><button class="btn btn--ghost" data-no>Nie</button><button class="btn ' + (s ? '' : 'btn--terra') + '" data-yes="' + k + '">Tak</button></span>'
-      : '<button class="btn ' + (s ? 'btn--ghost' : 'btn--terra') + '" data-ask="' + k + '">' + (s ? 'Przywróć' : 'Sprzedane') + '</button>';
+      : '<button class="btn ' + (s ? 'btn--ghost' : 'btn--terra') + '" data-ask="' + k + '">' + (s ? 'Przywróć' : 'Sprzedane') + '</button>' +
+        (s ? '' : '<button class="btn btn--ghost btn--sm" data-price="' + k + '">Cena</button>');
+    var price = promo(p)
+      ? '<span class="was">' + p.cenaPrzed + ' zł</span><span class="now">' + p.cena + ' zł</span><span class="off">−' + Math.round((1 - p.cena / p.cenaPrzed) * 100) + '%</span>'
+      : esc(p.cena) + ' zł';
+    var edit = editing === p.kod
+      ? '<div class="edit"><label for="np">Nowa cena (zł)</label><div class="line">' +
+          '<input id="np" type="number" inputmode="numeric" min="1" step="1" value="' + p.cena + '">' +
+          '<button class="btn btn--sm" data-saveprice="' + k + '">Zapisz</button>' +
+          '<button class="btn btn--ghost btn--sm" data-cancel>Anuluj</button></div>' +
+          (promo(p)
+            ? '<p class="prev">Rabat trwa, przekreślona cena: ' + p.cenaPrzed + ' zł. <button class="btn btn--ghost btn--sm" data-endpromo="' + k + '" style="margin-top:6px">Koniec rabatu (wraca ' + p.cenaPrzed + ' zł)</button></p>'
+            : '<p class="prev">Wpisz niższą cenę, a obecne ' + p.cena + ' zł będzie przekreślone.</p>') +
+        '</div>'
+      : '';
     return '<div class="row' + (s ? ' sold' : '') + '">' +
       '<img src="img/' + esc(p.folder) + '/thumb.jpg" alt="" loading="lazy" onerror="this.src=\'img/' + esc(p.folder) + '/01.jpg\'">' +
       '<div class="info"><div class="kod">' + k + '</div><div class="t">' + esc(p.marka) + ' · ' + esc(p.tytul) + '</div>' +
-      '<div class="m">' + esc(p.rozmiar) + ' · ' + esc(p.cena) + ' zł</div></div>' +
-      '<div class="act">' + act + '</div></div>';
+      '<div class="m">' + esc(p.rozmiar) + ' · ' + price + '</div></div>' +
+      '<div class="act">' + act + '</div>' + edit + '</div>';
   }
   function render() {
     var a = items.filter(function (p) { return !p.sprzedane; }), s = items.filter(function (p) { return p.sprzedane; });
@@ -151,34 +176,77 @@
     $('#listS').innerHTML = s.length ? s.map(rowHTML).join('') : '<p class="empty">Na razie nic.</p>';
   }
 
-  // Zmienia tylko „sprzedane: true/false” w bloku danej rzeczy
-  function patch(text, kod, val) {
+  // Zmienia tylko blok danej rzeczy w produkty.js (reszta pliku zostaje bez zmian)
+  function patch(text, kod, fn) {
     var start = text.indexOf('kod: "' + kod + '"');
     if (start < 0) return null;
     var next = text.indexOf('kod: "', start + 6); if (next < 0) next = text.length;
-    var block = text.slice(start, next), nb;
-    if (/sprzedane:\s*(true|false)/.test(block)) nb = block.replace(/sprzedane:\s*(true|false)/, 'sprzedane: ' + val);
-    else return null;
-    return text.slice(0, start) + nb + text.slice(next);
+    var nb = fn(text.slice(start, next));
+    return nb ? text.slice(0, start) + nb + text.slice(next) : null;
+  }
+  function soldFn(val) {
+    return function (b) { return /sprzedane:\s*(true|false)/.test(b) ? b.replace(/sprzedane:\s*(true|false)/, 'sprzedane: ' + val) : null; };
+  }
+  function priceFn(c) {
+    return function (b) {
+      var m = /\n([ \t]*)cena:\s*[\d.]+,?/.exec(b); if (!m) return null;
+      b = b.replace(/\n[ \t]*cenaPrzed:[^\n]*/g, '').replace(/\n[ \t]*historiaCen:[^\n]*/g, '');
+      m = /\n([ \t]*)cena:\s*[\d.]+,?/.exec(b);
+      var ind = m[1], ins = '\n' + ind + 'cena: ' + c.cena + ',' +
+        (c.cenaPrzed ? '\n' + ind + 'cenaPrzed: ' + c.cenaPrzed + ',' : '') +
+        '\n' + ind + 'historiaCen: ' + JSON.stringify(c.historiaCen) + ',';
+      return b.slice(0, m.index) + ins + b.slice(m.index + m[0].length);
+    };
   }
 
-  function commit(kod, val, retry) {
+  /* Rabat zgodny z prawem: przekreślona cena = najniższa cena z 30 dni przed obniżką.
+     Kolejna obniżka w trakcie rabatu zostawia tę samą przekreśloną cenę. */
+  function today() { var d = new Date(); return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
+  function lowest30(hist, cur) {
+    var from = new Date(Date.now() - 30 * 864e5).toISOString().slice(0, 10), min = cur;
+    hist.forEach(function (h, i) {
+      var end = hist[i + 1] ? hist[i + 1][0] : '9999';
+      if (end > from && h[1] < min) min = h[1];
+    });
+    return min;
+  }
+  function newPrice(p, nowa) {
+    var t = today(), hist = (p.historiaCen || []).slice(), przed = null;
+    if (!hist.length) hist.push(['2000-01-01', p.cena]);
+    if (nowa < p.cena) przed = promo(p) ? p.cenaPrzed : lowest30(hist, p.cena);
+    else if (promo(p) && nowa < p.cenaPrzed) przed = p.cenaPrzed;
+    if (przed !== null && przed <= nowa) przed = null;
+    if (hist[hist.length - 1][0] === t) hist[hist.length - 1] = [t, nowa]; else hist.push([t, nowa]);
+    if (hist.length > 12) hist = hist.slice(-12);
+    return { cena: nowa, cenaPrzed: przed, historiaCen: hist };
+  }
+
+  function commit(kod, change, retry) {
     var p = items.filter(function (x) { return x.kod === kod; })[0];
-    var text = patch(src, kod, val);
+    var isPrice = change.type === 'price', c = isPrice ? newPrice(p, change.cena) : null;
+    var text = patch(src, kod, isPrice ? priceFn(c) : soldFn(change.val));
     if (!text) { say('Nie znalazłem ' + kod + ' w danych sklepu.', true); return Promise.resolve(); }
-    var body = { message: (val ? 'Sprzedane: ' : 'Przywrócone: ') + kod + ' (' + p.marka + ' ' + p.tytul + ')', content: b64enc(text), sha: sha, branch: BRANCH };
+    var what = isPrice ? 'Cena ' + kod + ': ' + p.cena + ' → ' + c.cena + ' zł' + (c.cenaPrzed ? ' (rabat, przekreślone ' + c.cenaPrzed + ' zł)' : '')
+      : (change.val ? 'Sprzedane: ' : 'Przywrócone: ') + kod;
+    var body = { message: what + ' (' + p.marka + ' ' + p.tytul + ')', content: b64enc(text), sha: sha, branch: BRANCH };
     return fetch(API, { method: 'PUT', headers: headers(), body: JSON.stringify(body) })
       .then(function (r) {
         if (r.status === 409 && !retry) {   // ktoś zmienił plik w międzyczasie: wczytaj świeży i spróbuj raz jeszcze
           return fetch(API + '?ref=' + BRANCH + '&t=' + Date.now(), { headers: headers(), cache: 'no-store' })
             .then(function (r2) { return r2.json(); })
-            .then(function (j) { sha = j.sha; src = b64dec(j.content); return commit(kod, val, true); });
+            .then(function (j) { sha = j.sha; src = b64dec(j.content); return commit(kod, change, true); });
         }
         if (r.status === 401 || r.status === 403) throw { auth: true };
         if (!r.ok) throw { status: r.status };
         return r.json().then(function (j) {
-          sha = j.content.sha; src = text; p.sprzedane = val;
-          say(val ? kod + ' oznaczone jako sprzedane. Zniknie ze sklepu za ok. 1–2 min.' : kod + ' wraca do sklepu za ok. 1–2 min.');
+          sha = j.content.sha; src = text;
+          if (isPrice) {
+            p.cena = c.cena; p.cenaPrzed = c.cenaPrzed || undefined; p.historiaCen = c.historiaCen;
+            say(kod + ': nowa cena ' + c.cena + ' zł' + (c.cenaPrzed ? ', przekreślone ' + c.cenaPrzed + ' zł' : '') + '. Na stronie za ok. 1–2 min.');
+          } else {
+            p.sprzedane = change.val;
+            say(change.val ? kod + ' oznaczone jako sprzedane. Zniknie ze sklepu za ok. 1–2 min.' : kod + ' wraca do sklepu za ok. 1–2 min.');
+          }
         });
       })
       .catch(function (e) {
@@ -189,13 +257,29 @@
 
   document.addEventListener('click', function (e) {
     var t = e.target.closest('button'); if (!t || busy) return;
-    if (t.hasAttribute('data-ask')) { pending = t.getAttribute('data-ask'); render(); }
-    else if (t.hasAttribute('data-no')) { pending = null; render(); }
-    else if (t.hasAttribute('data-yes')) {
-      var kod = t.getAttribute('data-yes'), p = items.filter(function (x) { return x.kod === kod; })[0];
+    function item(k) { return items.filter(function (x) { return x.kod === k; })[0]; }
+    function run(kod, change) {
       busy = true; t.disabled = true; t.textContent = 'Zapisuję…';
-      commit(kod, !p.sprzedane).then(function () { busy = false; pending = null; render(); });
+      commit(kod, change).then(function () { busy = false; pending = null; editing = null; render(); });
     }
+    if (t.hasAttribute('data-ask')) { pending = t.getAttribute('data-ask'); editing = null; render(); }
+    else if (t.hasAttribute('data-no')) { pending = null; render(); }
+    else if (t.hasAttribute('data-yes')) { var k1 = t.getAttribute('data-yes'); run(k1, { type: 'sold', val: !item(k1).sprzedane }); }
+    else if (t.hasAttribute('data-price')) {
+      editing = editing === t.getAttribute('data-price') ? null : t.getAttribute('data-price'); pending = null; render();
+      var inp = $('#np'); if (inp) { inp.focus(); inp.select(); }
+    }
+    else if (t.hasAttribute('data-cancel')) { editing = null; render(); }
+    else if (t.hasAttribute('data-saveprice')) {
+      var k2 = t.getAttribute('data-saveprice'), v = Math.round(Number($('#np').value));
+      if (!(v >= 1 && v <= 100000)) { say('Wpisz cenę w złotych, np. 49.', true); return; }
+      if (v === item(k2).cena) { editing = null; render(); return; }
+      run(k2, { type: 'price', cena: v });
+    }
+    else if (t.hasAttribute('data-endpromo')) { var k3 = t.getAttribute('data-endpromo'); run(k3, { type: 'price', cena: item(k3).cenaPrzed }); }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' && e.target.id === 'np') { var b = document.querySelector('[data-saveprice]'); if (b) b.click(); }
   });
   $('#saveTok').addEventListener('click', function () {
     var v = $('#tok').value.trim();

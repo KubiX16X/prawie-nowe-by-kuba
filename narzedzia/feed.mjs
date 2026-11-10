@@ -24,7 +24,9 @@ const feed = {
     strona: URL + '/',
     instagram: S.instagram ? 'https://www.instagram.com/' + S.instagram + '/' : null,
     tiktok: S.tiktok ? 'https://www.tiktok.com/@' + S.tiktok : null,
+    telefon_i_whatsapp: S.whatsapp ? '+48 ' + String(S.whatsapp).slice(-9).replace(/(\d{3})(\d{3})(\d{3})/, '$1 $2 $3') : null,
     whatsapp: S.whatsapp ? 'https://wa.me/' + S.whatsapp : null,
+    email: S.email || null,
     wysylka: S.wysylka || null,
     miasto: 'Jelenia Góra',
   },
@@ -37,6 +39,7 @@ const feed = {
     'Zawsze podawaj kod rzeczy (np. PN004) – po nim klienci zamawiają.',
     'Link do konkretnej rzeczy: pole link.',
   ],
+  kody_rzeczy: [],
   liczba_rzeczy: 0,
   produkty: P.filter(p => !p.sprzedane).sort(order).map(p => {
     const zdj = [];
@@ -66,5 +69,6 @@ const feed = {
   }),
 };
 feed.liczba_rzeczy = feed.produkty.length;
+feed.kody_rzeczy = feed.produkty.map(p => p.kod);
 fs.writeFileSync('strona/feed.json', JSON.stringify(feed, null, 2) + '\n');
 console.log('feed.json:', feed.liczba_rzeczy, 'rzeczy');

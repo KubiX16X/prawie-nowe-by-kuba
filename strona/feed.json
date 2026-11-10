@@ -4,7 +4,9 @@
     "strona": "https://prawienowe.pages.dev/",
     "instagram": "https://www.instagram.com/prawienowebykuba/",
     "tiktok": "https://www.tiktok.com/@prawienowebykuba",
+    "telefon_i_whatsapp": "+48 570 005 150",
     "whatsapp": "https://wa.me/48570005150",
+    "email": "prawienowebykuba@gmail.com",
     "wysylka": "Wysyłka w 1–2 dni robocze od zaksięgowania wpłaty, starannie zapakowane.",
     "miasto": "Jelenia Góra"
   },
@@ -16,6 +18,16 @@
     "Przy rabacie: cena_przed_obnizka to najniższa cena z 30 dni przed obniżką – można ją pokazać jako przekreśloną.",
     "Zawsze podawaj kod rzeczy (np. PN004) – po nim klienci zamawiają.",
     "Link do konkretnej rzeczy: pole link."
+  ],
+  "kody_rzeczy": [
+    "PN006",
+    "PN007",
+    "PN008",
+    "PN011",
+    "PN002",
+    "PN004",
+    "PN005",
+    "PN010"
   ],
   "liczba_rzeczy": 8,
   "produkty": [

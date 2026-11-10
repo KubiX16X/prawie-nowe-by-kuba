@@ -1,0 +1,359 @@
+{
+  "sklep": {
+    "nazwa": "Prawie Nowe by Kuba",
+    "strona": "https://prawienowe.pages.dev/",
+    "instagram": "https://www.instagram.com/prawienowebykuba/",
+    "tiktok": "https://www.tiktok.com/@prawienowebykuba",
+    "whatsapp": "https://wa.me/48570005150",
+    "wysylka": "Wysyłka w 1–2 dni robocze od zaksięgowania wpłaty, starannie zapakowane.",
+    "miasto": "Jelenia Góra"
+  },
+  "zaktualizowano": "2026-11-09T17:16:20+01:00",
+  "zasady_dla_agenta": [
+    "Lista zawiera tylko rzeczy dostępne teraz. Rzeczy spoza listy są sprzedane – nie promuj ich.",
+    "Używaj tylko zdjęć z pola zdjecia (prawdziwe zdjęcia tego egzemplarza). Nie generuj ani nie podmieniaj zdjęć produktu.",
+    "Cena, rozmiar, stan, skład i wady tylko z tego pliku. Wady opisuj uczciwie, niczego nie dopisuj.",
+    "Przy rabacie: cena_przed_obnizka to najniższa cena z 30 dni przed obniżką – można ją pokazać jako przekreśloną.",
+    "Zawsze podawaj kod rzeczy (np. PN004) – po nim klienci zamawiają.",
+    "Link do konkretnej rzeczy: pole link."
+  ],
+  "liczba_rzeczy": 8,
+  "produkty": [
+    {
+      "kod": "PN006",
+      "marka": "NA-KD",
+      "tytul": "Krótki płaszcz z szalem, brązowy",
+      "kategoria": "Płaszcze",
+      "rozmiar": "38",
+      "rozmiar_na_metce": "EU 38",
+      "stan": "Nowy z metką",
+      "cena": 159,
+      "cena_przed_obnizka": 219,
+      "rabat_procent": 27,
+      "waluta": "PLN",
+      "opis": "Model Short Scarf Detailed Coat: szeroki krój bez kołnierza, obniżona linia ramion. Odpinany szal w komplecie (200 cm). Kryte zapięcie na 4 napy, zapasowa napa przy metce. Z podszewką i kieszeniami. Pielęgnacja: tylko czyszczenie chemiczne.",
+      "wady": null,
+      "wymiary_na_plasko": [
+        {
+          "nazwa": "Pod pachami",
+          "wartosc": "60,5 cm"
+        },
+        {
+          "nazwa": "Długość (od dekoltu z tyłu)",
+          "wartosc": "72 cm"
+        },
+        {
+          "nazwa": "Rękaw",
+          "wartosc": "55,5 cm"
+        }
+      ],
+      "material": "Wierzch: 100% poliester. Podszewka: 100% poliester.",
+      "kolor": "ciemny brąz",
+      "link": "https://prawienowe.pages.dev/#PN006",
+      "zdjecie_glowne": "https://prawienowe.pages.dev/img/p6/01.jpg",
+      "miniatura": "https://prawienowe.pages.dev/img/p6/thumb.jpg",
+      "zdjecia": [
+        "https://prawienowe.pages.dev/img/p6/01.jpg",
+        "https://prawienowe.pages.dev/img/p6/02.jpg",
+        "https://prawienowe.pages.dev/img/p6/03.jpg",
+        "https://prawienowe.pages.dev/img/p6/04.jpg",
+        "https://prawienowe.pages.dev/img/p6/05.jpg",
+        "https://prawienowe.pages.dev/img/p6/06.jpg",
+        "https://prawienowe.pages.dev/img/p6/07.jpg",
+        "https://prawienowe.pages.dev/img/p6/08.jpg",
+        "https://prawienowe.pages.dev/img/p6/09.jpg"
+      ]
+    },
+    {
+      "kod": "PN007",
+      "marka": "ONLY",
+      "tytul": "Jeansy Blush Mid Straight, jasnoniebieskie",
+      "kategoria": "Spodnie",
+      "rozmiar": "S/32",
+      "rozmiar_na_metce": "S/32",
+      "stan": "Nowy z metką",
+      "cena": 119,
+      "cena_przed_obnizka": 159,
+      "rabat_procent": 25,
+      "waluta": "PLN",
+      "opis": "Proste nogawki i średni stan, kolor Light Blue Denim. Klasyczne 5 kieszeni, zamek i guzik, naszywka z logo z tyłu na pasku. Cena z metki: 229,99 zł.",
+      "wady": null,
+      "wymiary_na_plasko": [
+        {
+          "nazwa": "Pas",
+          "wartosc": "35 cm"
+        },
+        {
+          "nazwa": "Długość całkowita",
+          "wartosc": "100 cm z przodu, 103 cm z tyłu"
+        }
+      ],
+      "material": "92% bawełna organiczna, 6% elastomultiester, 2% elastan. Wg metki zawiera nietekstylne elementy pochodzenia zwierzęcego.",
+      "kolor": "jasnoniebieski",
+      "link": "https://prawienowe.pages.dev/#PN007",
+      "zdjecie_glowne": "https://prawienowe.pages.dev/img/p7/01.jpg",
+      "miniatura": "https://prawienowe.pages.dev/img/p7/thumb.jpg",
+      "zdjecia": [
+        "https://prawienowe.pages.dev/img/p7/01.jpg",
+        "https://prawienowe.pages.dev/img/p7/02.jpg",
+        "https://prawienowe.pages.dev/img/p7/03.jpg",
+        "https://prawienowe.pages.dev/img/p7/04.jpg",
+        "https://prawienowe.pages.dev/img/p7/05.jpg",
+        "https://prawienowe.pages.dev/img/p7/06.jpg"
+      ]
+    },
+    {
+      "kod": "PN008",
+      "marka": "Vittorio Y",
+      "tytul": "Jeansy z szerokimi nogawkami, niebieskie",
+      "kategoria": "Spodnie",
+      "rozmiar": "L",
+      "rozmiar_na_metce": "L, model FX-9050",
+      "stan": "Nowy z metką",
+      "cena": 99,
+      "cena_przed_obnizka": 129,
+      "rabat_procent": 23,
+      "waluta": "PLN",
+      "opis": "Szerokie nogawki, klasyczne 5 kieszeni, zamek i guzik. Jaśniejsze przecierki na udach i pod tylnymi kieszeniami to element projektu.",
+      "wady": null,
+      "wymiary_na_plasko": [
+        {
+          "nazwa": "Pas",
+          "wartosc": "42,5 cm"
+        },
+        {
+          "nazwa": "Długość całkowita",
+          "wartosc": "104,5 cm z przodu, 105,5 cm z tyłu"
+        },
+        {
+          "nazwa": "Szerokość nogawki u dołu",
+          "wartosc": "27 cm"
+        }
+      ],
+      "material": "75% bawełna, 22% poliester, 3% elastan",
+      "kolor": "niebieski",
+      "link": "https://prawienowe.pages.dev/#PN008",
+      "zdjecie_glowne": "https://prawienowe.pages.dev/img/p8/01.jpg",
+      "miniatura": "https://prawienowe.pages.dev/img/p8/thumb.jpg",
+      "zdjecia": [
+        "https://prawienowe.pages.dev/img/p8/01.jpg",
+        "https://prawienowe.pages.dev/img/p8/02.jpg",
+        "https://prawienowe.pages.dev/img/p8/03.jpg",
+        "https://prawienowe.pages.dev/img/p8/04.jpg",
+        "https://prawienowe.pages.dev/img/p8/05.jpg",
+        "https://prawienowe.pages.dev/img/p8/06.jpg"
+      ]
+    },
+    {
+      "kod": "PN011",
+      "marka": "Desigual",
+      "tytul": "Cienki sweter w owoce, czarny",
+      "kategoria": "Swetry",
+      "rozmiar": "XL",
+      "rozmiar_na_metce": "EUR XL / USA L / MEX 36 / UK 16",
+      "stan": "Nowy z metką",
+      "cena": 129,
+      "cena_przed_obnizka": 229,
+      "rabat_procent": 44,
+      "waluta": "PLN",
+      "opis": "Lekka dzianina na wiosnę i jesień, nadruk z niebieskimi i zielonymi owocami na czarnym tle. Okrągły dekolt, długi rękaw, jasne wykończenie przy dekolcie i na dole. Pielęgnacja: prać i prasować na lewej stronie.",
+      "wady": null,
+      "wymiary_na_plasko": [
+        {
+          "nazwa": "Pod pachami",
+          "wartosc": "60 cm"
+        },
+        {
+          "nazwa": "Długość",
+          "wartosc": "54,5 cm od dekoltu z tyłu, 43,5 cm z przodu"
+        },
+        {
+          "nazwa": "Rękaw (od dekoltu)",
+          "wartosc": "67 cm"
+        }
+      ],
+      "material": "78% wiskoza, 13% poliamid, 9% len",
+      "kolor": "czarny w niebiesko-zielone owoce",
+      "link": "https://prawienowe.pages.dev/#PN011",
+      "zdjecie_glowne": "https://prawienowe.pages.dev/img/p11/01.jpg",
+      "miniatura": "https://prawienowe.pages.dev/img/p11/thumb.jpg",
+      "zdjecia": [
+        "https://prawienowe.pages.dev/img/p11/01.jpg",
+        "https://prawienowe.pages.dev/img/p11/02.jpg",
+        "https://prawienowe.pages.dev/img/p11/03.jpg",
+        "https://prawienowe.pages.dev/img/p11/04.jpg",
+        "https://prawienowe.pages.dev/img/p11/05.jpg",
+        "https://prawienowe.pages.dev/img/p11/06.jpg",
+        "https://prawienowe.pages.dev/img/p11/07.jpg",
+        "https://prawienowe.pages.dev/img/p11/08.jpg"
+      ]
+    },
+    {
+      "kod": "PN002",
+      "marka": "Zara",
+      "tytul": "Bluza rozpinana z kapturem, asymetryczna, czarna",
+      "kategoria": "Bluzy",
+      "rozmiar": "S",
+      "rozmiar_na_metce": "EUR S / USA S",
+      "stan": "Dobry",
+      "cena": 30,
+      "cena_przed_obnizka": 59,
+      "rabat_procent": 49,
+      "waluta": "PLN",
+      "opis": "Asymetryczny krój: ukośny zamek, wstawki z innej dzianiny, surowe krawędzie, boczny zamek przy dole i mały haft na piersi. Wyrazisty streetwear.",
+      "wady": "Strzępienie przy lewym mankiecie, wystrzępione miejsce przy dolnej części zamka i przetarte krawędzie kieszeni. Surowe krawędzie to element projektu.",
+      "wymiary_na_plasko": [
+        {
+          "nazwa": "Pod pachami",
+          "wartosc": "ok. 49 cm"
+        },
+        {
+          "nazwa": "Rękaw",
+          "wartosc": "ok. 54 cm"
+        }
+      ],
+      "material": "Tkanina główna: 46% bawełna, 46% poliester, 8% wiskoza. Tkanina dodatkowa: 100% bawełna.",
+      "kolor": "czarny",
+      "link": "https://prawienowe.pages.dev/#PN002",
+      "zdjecie_glowne": "https://prawienowe.pages.dev/img/p2/01.jpg",
+      "miniatura": "https://prawienowe.pages.dev/img/p2/thumb.jpg",
+      "zdjecia": [
+        "https://prawienowe.pages.dev/img/p2/01.jpg",
+        "https://prawienowe.pages.dev/img/p2/02.jpg",
+        "https://prawienowe.pages.dev/img/p2/03.jpg",
+        "https://prawienowe.pages.dev/img/p2/04.jpg",
+        "https://prawienowe.pages.dev/img/p2/05.jpg",
+        "https://prawienowe.pages.dev/img/p2/06.jpg",
+        "https://prawienowe.pages.dev/img/p2/07.jpg",
+        "https://prawienowe.pages.dev/img/p2/08.jpg",
+        "https://prawienowe.pages.dev/img/p2/09.jpg"
+      ]
+    },
+    {
+      "kod": "PN004",
+      "marka": "Adidas",
+      "tytul": "Kurtka Cold.RDY z kapturem, ocieplana, czarna",
+      "kategoria": "Kurtki",
+      "rozmiar": "M",
+      "rozmiar_na_metce": "UK M / US M / EU M",
+      "stan": "Dobry",
+      "cena": 79,
+      "cena_przed_obnizka": 119,
+      "rabat_procent": 34,
+      "waluta": "PLN",
+      "opis": "Elastyczna kurtka z linii Cold.RDY, rozpinana na całej długości, z kapturem. W środku polar w korpusie i kapturze. Kieszenie na zamek z odblaskowymi detalami, ściągacze z napisem COLD.RDY.",
+      "wady": "Drobne jasne smugi na przodzie (zdjęcie 7) i lekko zbity polar przy mankiecie (zdjęcie 5).",
+      "wymiary_na_plasko": [
+        {
+          "nazwa": "Pod pachami",
+          "wartosc": "ok. 52 cm"
+        },
+        {
+          "nazwa": "Długość (od kołnierza)",
+          "wartosc": "ok. 70 cm"
+        },
+        {
+          "nazwa": "Rękaw",
+          "wartosc": "ok. 65 cm"
+        }
+      ],
+      "material": "Materiał główny: 92% poliester z recyklingu, 8% elastan.",
+      "kolor": "czarny",
+      "link": "https://prawienowe.pages.dev/#PN004",
+      "zdjecie_glowne": "https://prawienowe.pages.dev/img/p4/01.jpg",
+      "miniatura": "https://prawienowe.pages.dev/img/p4/thumb.jpg",
+      "zdjecia": [
+        "https://prawienowe.pages.dev/img/p4/01.jpg",
+        "https://prawienowe.pages.dev/img/p4/02.jpg",
+        "https://prawienowe.pages.dev/img/p4/03.jpg",
+        "https://prawienowe.pages.dev/img/p4/04.jpg",
+        "https://prawienowe.pages.dev/img/p4/05.jpg",
+        "https://prawienowe.pages.dev/img/p4/06.jpg",
+        "https://prawienowe.pages.dev/img/p4/07.jpg",
+        "https://prawienowe.pages.dev/img/p4/08.jpg"
+      ]
+    },
+    {
+      "kod": "PN005",
+      "marka": "Zara",
+      "tytul": "Bezrękawnik pikowany z odpinanym kapturem, czarny",
+      "kategoria": "Kamizelki",
+      "rozmiar": "S-M",
+      "rozmiar_na_metce": "EUR/USA S-M, MEX 38-40",
+      "stan": "Dobry",
+      "cena": 35,
+      "cena_przed_obnizka": 39,
+      "rabat_procent": 10,
+      "waluta": "PLN",
+      "opis": "Luźny, pikowany bezrękawnik ze stójką i odpinanym kapturem (zamek i napy). Zamek przykryty listwą na napy, dwie kieszenie boczne. Ciepła warstwa na jesień.",
+      "wady": "Jasne plamy na kapturze od zewnątrz i ciemniejsze zabrudzenia wewnątrz kaptura przy zamku (zdjęcia 5 i 6). Kaptur można odpiąć.",
+      "wymiary_na_plasko": [
+        {
+          "nazwa": "Długość (od góry stójki)",
+          "wartosc": "ok. 77 cm"
+        }
+      ],
+      "material": "Wierzch: 100% poliester. Podszewka: 100% poliester.",
+      "kolor": "czarny",
+      "link": "https://prawienowe.pages.dev/#PN005",
+      "zdjecie_glowne": "https://prawienowe.pages.dev/img/p5/01.jpg",
+      "miniatura": "https://prawienowe.pages.dev/img/p5/thumb.jpg",
+      "zdjecia": [
+        "https://prawienowe.pages.dev/img/p5/01.jpg",
+        "https://prawienowe.pages.dev/img/p5/02.jpg",
+        "https://prawienowe.pages.dev/img/p5/03.jpg",
+        "https://prawienowe.pages.dev/img/p5/04.jpg",
+        "https://prawienowe.pages.dev/img/p5/05.jpg",
+        "https://prawienowe.pages.dev/img/p5/06.jpg",
+        "https://prawienowe.pages.dev/img/p5/07.jpg",
+        "https://prawienowe.pages.dev/img/p5/08.jpg",
+        "https://prawienowe.pages.dev/img/p5/09.jpg",
+        "https://prawienowe.pages.dev/img/p5/10.jpg",
+        "https://prawienowe.pages.dev/img/p5/11.jpg",
+        "https://prawienowe.pages.dev/img/p5/12.jpg"
+      ]
+    },
+    {
+      "kod": "PN010",
+      "marka": "H&M",
+      "tytul": "Bluza dziecięca NYC, szary melanż",
+      "kategoria": "Dziecięce",
+      "rozmiar": "146/152",
+      "rozmiar_na_metce": "EUR 146/152, US 10-12Y",
+      "stan": "Nowy bez metki",
+      "cena": 39,
+      "cena_przed_obnizka": null,
+      "rabat_procent": null,
+      "waluta": "PLN",
+      "opis": "Naszywany napis NYC, granatowy z białym obszyciem. Okrągły dekolt z trójkątną wstawką, mankiety w granatowe paski. Od środka miękki meszek, przy karku tasiemka w paski.",
+      "wady": null,
+      "wymiary_na_plasko": [
+        {
+          "nazwa": "Pod pachami",
+          "wartosc": "43 cm"
+        },
+        {
+          "nazwa": "Długość",
+          "wartosc": "57 cm od dekoltu z tyłu, 53 cm z przodu"
+        },
+        {
+          "nazwa": "Rękaw",
+          "wartosc": "54 cm"
+        }
+      ],
+      "material": "55% bawełna, 45% poliester",
+      "kolor": "szary melanż, napis granatowy",
+      "link": "https://prawienowe.pages.dev/#PN010",
+      "zdjecie_glowne": "https://prawienowe.pages.dev/img/p10/01.jpg",
+      "miniatura": "https://prawienowe.pages.dev/img/p10/thumb.jpg",
+      "zdjecia": [
+        "https://prawienowe.pages.dev/img/p10/01.jpg",
+        "https://prawienowe.pages.dev/img/p10/02.jpg",
+        "https://prawienowe.pages.dev/img/p10/03.jpg",
+        "https://prawienowe.pages.dev/img/p10/04.jpg",
+        "https://prawienowe.pages.dev/img/p10/05.jpg",
+        "https://prawienowe.pages.dev/img/p10/06.jpg"
+      ]
+    }
+  ]
+}

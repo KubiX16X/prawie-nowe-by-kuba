@@ -1,0 +1,28 @@
+name: Feed dla agenta AI
+on:
+  push:
+    branches: [sklep]
+    paths: ['strona/produkty.js', 'narzedzia/feed.mjs']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: feed
+  cancel-in-progress: false
+jobs:
+  feed:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: node narzedzia/feed.mjs
+      - name: Zapisz feed.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add strona/feed.json
+          if git diff --cached --quiet; then echo "bez zmian"; exit 0; fi
+          git commit -m "Feed dla agenta: aktualizacja"
+          for i in 1 2 3; do git pull --rebase origin sklep && git push origin HEAD:sklep && exit 0; sleep 5; done
+          exit 1

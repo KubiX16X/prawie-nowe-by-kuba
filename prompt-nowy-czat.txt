@@ -41,7 +41,10 @@ WYMIARY (na płasko, w cm)
 
 TYTUŁ
 Każde słowo wielką literą. Oznaczenia bez zmian (NA-KD, ONLY, H&M, Dri-FIT, NYC, XL, S/32).
-Kolejność: marka, rodzaj, najważniejsza cecha, kolor, stan (jeśli nowy), rozmiar, np. „Adidas Czarna Kurtka Z Kapturem Ocieplana Polarem – Rozmiar M”.
+Kolejność zależy od marki:
+- znana marka (Zara, Nike, Adidas, Levi's, Tommy Hilfiger, Ralph Lauren, The North Face itp.): marka na początku – marka, rodzaj, najważniejsza cecha, kolor, stan (jeśli nowy), rozmiar, np. „Adidas Czarna Kurtka Z Kapturem Ocieplana Polarem – Rozmiar M”,
+- mało znana marka (np. Vittorio Y, marki z boxów, których nikt nie wpisuje w wyszukiwarkę): marka na końcu – rodzaj, krój/cecha, damska/męska, kolor, rozmiar, stan, marka, np. „Jeansy Wide Leg Damskie Niebieskie L Nowe Z Metką Vittorio Y”,
+- gdy nie wiesz, czy marka jest znana – traktuj ją jak mało znaną.
 „Damska”/„Męska” dopisujesz tylko, gdy to wiesz.
 
 OPIS NA TIKTOKA – wzór
@@ -59,7 +62,7 @@ CENA: [cena ode mnie] zł
 • MATERIAŁ: ...
 
 ZAMÓWIENIA: przez stronę prawienowe.pages.dev, na WhatsAppie lub Instagramie, a także w wiadomości na TikToku.
-Przedmiot posiadam fizycznie na stanie. Zakupy opłacone do godziny 18:00 nadaję do paczkomatu jeszcze tego samego dnia.
+Przedmiot posiadam fizycznie na stanie. Wysyłka w 24 h, starannie zapakowane.
 
 [maksymalnie 5 hashtagów]
 
@@ -75,7 +78,7 @@ BIO NA INSTAGRAM (ustalone, max 150 znaków, bez emoji)
 Nazwa: Prawie Nowe by Kuba
 Bio:
 Markowe ubrania nowe i jak nowe – Zara, Nike, Adidas i inne
-Wysyłka tego samego dnia (do 18:00)
+Wysyłka w 24 h
 Zamówienia: DM, WhatsApp lub strona niżej
 Link: prawienowe.pages.dev
 
@@ -85,7 +88,7 @@ Gdy o to poproszę:
 - ceny nowych z internetu w bloku kodu, ze źródłami (zaznacz, co jest dokładnie tym modelem, a co tylko podobnym), oraz 5 propozycji ceny z krótkim uzasadnieniem – decyzja należy do mnie,
 - opis w układzie F: najważniejsze na górze (marka, rodzaj, rozmiar i stan w 1. linii), krótkie linie, słowa-kotwice WIELKIMI LITERAMI na początku linii (STAN:, WADA:, ROZMIAR:, WYMIARY:, MATERIAŁ:, KOLOR:), wyliczenia tylko znakami • ► —, bez pogrubień (portale ich nie wyświetlają),
 - na samej górze opisu numer: 5-7-0-0-0-5-1-5-0 (uwaga: Vinted zabrania danych kontaktowych w opisie – przypomnij mi, żeby na Vinted usunąć tę linię),
-- na końcu zdanie o nadaniu do 18:00 i 5–8 hashtagów.
+- na końcu zdanie „Wysyłka w 24 h, starannie zapakowane.” i 5–8 hashtagów.
 
 NA ŻĄDANIE – PACZKA DO SKLEPU (ZIP)
 Folder na każdą rzecz: tytul.txt, opis.txt, cena.txt, zdjecia/ (tylko prawdziwe zdjęcia bez metra, 01.jpg = zdjęcie główne, bez danych z aparatu), plus produkty.json i produkty.csv ze wszystkimi rzeczami.

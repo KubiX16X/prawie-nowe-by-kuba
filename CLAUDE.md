@@ -11,6 +11,9 @@ Poniższe ustalenia są nowsze i mają pierwszeństwo.
 - Ceny: szukam w internecie, po ile chodzą te rzeczy nowe z metką (w bloku kodu, ze źródłami).
   Na tej podstawie daję 5 propozycji ceny z krótkim uzasadnieniem. Decyzję podejmuje Kuba.
 - Tytuły: każde słowo zaczyna się wielką literą (np. „Nike Bluza Z Kapturem Szara L”).
+  Znana marka (Zara, Nike, Adidas, Levi's itp.) na początku. Mało znana marka (np. Vittorio Y) na końcu,
+  a na początku to, co kupujący wpisuje: „Jeansy Wide Leg Damskie Niebieskie L Nowe Z Metką Vittorio Y”.
+  Gdy nie wiem, czy marka jest znana – traktuję ją jak mało znaną.
   Oznaczenia zostają jak są (NA-KD, ONLY, H&M, Dri-FIT, XL, S/32).
 - Tytuły i opisy zbieram w jednym pliku txt w katalogu ogloszenia/ (jedna rzecz = jeden katalog).
 - Gdy nie jestem pewny – pytam.
@@ -23,8 +26,8 @@ Poniższe ustalenia są nowsze i mają pierwszeństwo.
 - Układ F: odwrócona piramida (najważniejsze na górze), krótkie akapity,
   kluczowe słowo na początku linii. Wyliczenia tylko znakami: •  ►  —
 - Na samej górze opisu numer: 5-7-0-0-0-5-1-5-0
-- Zamiast „Wysyłka w 1–2 dni robocze” zawsze zdanie:
-  „Przedmiot posiadam fizycznie na stanie. Zakupy opłacone do godziny 18:00 nadaję do paczkomatu jeszcze tego samego dnia.”
+- Wysyłka (od 14.11.2026): zawsze zdanie „Przedmiot posiadam fizycznie na stanie. Wysyłka w 24 h, starannie zapakowane.”
+  Nigdy „1–2 dni robocze”, nigdy godzina 18:00 ani „tego samego dnia”.
 - Zamiast pogrubień: słowa-kotwice WIELKIMI LITERAMI na początku linii (np. „STAN:”, „WYMIARY:”).
   OLX i Vinted nie wyświetlają pogrubień.
 - Do ustalenia z Kubą: numer telefonu na Vinted (zasady Vinted zabraniają kontaktu w opisie).
@@ -37,7 +40,7 @@ Poniższe ustalenia są nowsze i mają pierwszeństwo.
 - Format: tytuł, CENA (podaje Kuba – jeśli nie poda, pytam), zdanie z korzyścią (►),
   wyliczenia • (STAN, WADA, ROZMIAR, WYMIARY, DETALE, MATERIAŁ), potem:
   „ZAMÓWIENIA: przez stronę prawienowe.pages.dev, na WhatsAppie lub Instagramie, a także w wiadomości na TikToku.”
-  i zdanie o nadaniu do 18:00. Bez emoji, bez numeru telefonu na górze.
+  i zdanie „Wysyłka w 24 h, starannie zapakowane.”. Bez emoji, bez numeru telefonu na górze.
 - Hashtagi na TikToku: maksymalnie 5, najpopularniejsze: marka (jeśli znana), rodzaj rzeczy
   i popularne ogólne (np. #moda, #outfit, #dlaciebie).
 

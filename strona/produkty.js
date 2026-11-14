@@ -15,7 +15,7 @@ window.SKLEP = {
   whatsapp: "48570005150",               // numer WhatsApp z kierunkowym 48, bez spacji i plusa
   tiktok: "prawienowebykuba",
   email: "prawienowebykuba@gmail.com",
-  wysylka: "Wysyłka w 1–2 dni robocze od zaksięgowania wpłaty, starannie zapakowane.",
+  wysylka: "Wysyłka w 24 h od zaksięgowania wpłaty, starannie zapakowane.",
 };
 
 /* Stałe kategorie – widać je zawsze, także gdy są puste (wtedy klient widzi „Na razie pusto”).

@@ -20,7 +20,7 @@ try { updated = execSync('git log -1 --format=%cI -- strona/produkty.js').toStri
 
 const feed = {
   sklep: {
-    nazwa: 'Prawie Nowe by Kuba',
+    nazwa: 'CERVO boutique',
     strona: URL + '/',
     instagram: S.instagram ? 'https://www.instagram.com/' + S.instagram + '/' : null,
     tiktok: S.tiktok ? 'https://www.tiktok.com/@' + S.tiktok : null,

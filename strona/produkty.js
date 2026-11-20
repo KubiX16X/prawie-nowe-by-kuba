@@ -1,8 +1,8 @@
 /* ================================================================
-   PRAWIE NOWE BY KUBA – dane sklepu
+   CERVO BOUTIQUE – dane sklepu
    To jedyny plik, który zmieniasz przy dodawaniu i sprzedawaniu rzeczy.
 
-   Sprzedane i ceny najprościej zmieniać w panelu: prawienowe.pages.dev/admin.html
+   Sprzedane i ceny najprościej zmieniać w panelu: cervoboutique.pages.dev/admin.html
    (cenaPrzed = przekreślona cena przy rabacie, historiaCen = daty zmian cen; uzupełnia je panel)
    Sprzedane:  zmień  sprzedane: false  na  sprzedane: true
    Nowa rzecz: skopiuj cały blok { ... } jednej rzeczy, nadaj kolejny kod
@@ -11,7 +11,7 @@
    ================================================================ */
 
 window.SKLEP = {
-  instagram: "prawienowebykuba",          // nazwa konta na Instagramie (bez @)
+  instagram: "cervoboutique_",            // nazwa konta na Instagramie (bez @)
   whatsapp: "48570005150",               // numer WhatsApp z kierunkowym 48, bez spacji i plusa
   tiktok: "prawienowebykuba",
   email: "prawienowebykuba@gmail.com",

@@ -1,4 +1,16 @@
-/* Prawie Nowe by Kuba – logika sklepu. Dane rzeczy są w produkty.js. */
+/* CERVO boutique – logika sklepu. Dane rzeczy są w produkty.js. */
+
+/* Stary adres: prawienowe.pages.dev → cervoboutique.pages.dev, z tą samą ścieżką i # (np. #PN004).
+   Przenosi dopiero wtedy, gdy nowy adres działa (wczytuje się z niego ikona sklepu),
+   więc dopóki projekt „cervoboutique” w Cloudflare nie istnieje, stara strona działa jak dawniej. */
+(function () {
+  var NOWY = 'https://cervoboutique.pages.dev';
+  if (location.hostname !== 'prawienowe.pages.dev') return;
+  var test = new Image();
+  test.onload = function () { location.replace(NOWY + location.pathname + location.search + location.hash); };
+  test.src = NOWY + '/img/brand/icon-192.png?t=' + Date.now();
+})();
+
 (function () {
   'use strict';
 
@@ -115,7 +127,7 @@
     $('#newGrid').innerHTML = newest(available).slice(0, 4).map(cardHTML).join('');
     $('#catGrid').style.setProperty('--cats', CATS.length <= 6 ? Math.max(CATS.length, 4) : Math.min(Math.ceil(CATS.length / 2), 6));
     $('#catGrid').innerHTML = CATS.map(function (c) {
-      // kafelek z samym napisem: wieszak z metką, nazwa kategorii kursywą, liczba rzeczy
+      // kafelek z samym napisem: poroże z logo, nazwa kategorii kursywą, liczba rzeczy
       var n = P.filter(function (p) { return inCat(p, c) && !p.sprzedane; }).length;
       return '<a class="cat" href="#/kolekcja/kat/' + encodeURIComponent(c) + '"><div class="cat__tile">' +
         '<img class="cat__tag" src="img/brand/wieszak.png" alt="" width="52" height="42">' +

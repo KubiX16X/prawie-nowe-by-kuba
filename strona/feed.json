@@ -10,7 +10,7 @@
     "wysylka": "Wysyłka w 24 h od zaksięgowania wpłaty, starannie zapakowane.",
     "miasto": "Jelenia Góra"
   },
-  "zaktualizowano": "2026-11-20T18:24:11Z",
+  "zaktualizowano": "2026-11-20T20:04:21+01:00",
   "zasady_dla_agenta": [
     "Lista zawiera tylko rzeczy dostępne teraz. Rzeczy spoza listy są sprzedane – nie promuj ich.",
     "Używaj tylko zdjęć z pola zdjecia (prawdziwe zdjęcia tego egzemplarza). Nie generuj ani nie podmieniaj zdjęć produktu.",
@@ -23,13 +23,12 @@
     "PN006",
     "PN007",
     "PN008",
-    "PN011",
     "PN002",
     "PN004",
     "PN005",
     "PN010"
   ],
-  "liczba_rzeczy": 8,
+  "liczba_rzeczy": 7,
   "produkty": [
     {
       "kod": "PN006",
@@ -154,50 +153,6 @@
         "https://cervoboutique.pages.dev/img/p8/04.jpg",
         "https://cervoboutique.pages.dev/img/p8/05.jpg",
         "https://cervoboutique.pages.dev/img/p8/06.jpg"
-      ]
-    },
-    {
-      "kod": "PN011",
-      "marka": "Desigual",
-      "tytul": "Cienki sweter w owoce, czarny",
-      "kategoria": "Swetry",
-      "rozmiar": "XL",
-      "rozmiar_na_metce": "EUR XL / USA L / MEX 36 / UK 16",
-      "stan": "Nowy z metką",
-      "cena": 79,
-      "cena_przed_obnizka": 229,
-      "rabat_procent": 66,
-      "waluta": "PLN",
-      "opis": "Lekka dzianina na wiosnę i jesień, nadruk z niebieskimi i zielonymi owocami na czarnym tle. Okrągły dekolt, długi rękaw, jasne wykończenie przy dekolcie i na dole. Pielęgnacja: prać i prasować na lewej stronie.",
-      "wady": null,
-      "wymiary_na_plasko": [
-        {
-          "nazwa": "Pod pachami",
-          "wartosc": "60 cm"
-        },
-        {
-          "nazwa": "Długość",
-          "wartosc": "54,5 cm od dekoltu z tyłu, 43,5 cm z przodu"
-        },
-        {
-          "nazwa": "Rękaw (od dekoltu)",
-          "wartosc": "67 cm"
-        }
-      ],
-      "material": "78% wiskoza, 13% poliamid, 9% len",
-      "kolor": "czarny w niebiesko-zielone owoce",
-      "link": "https://cervoboutique.pages.dev/#PN011",
-      "zdjecie_glowne": "https://cervoboutique.pages.dev/img/p11/01.jpg",
-      "miniatura": "https://cervoboutique.pages.dev/img/p11/thumb.jpg",
-      "zdjecia": [
-        "https://cervoboutique.pages.dev/img/p11/01.jpg",
-        "https://cervoboutique.pages.dev/img/p11/02.jpg",
-        "https://cervoboutique.pages.dev/img/p11/03.jpg",
-        "https://cervoboutique.pages.dev/img/p11/04.jpg",
-        "https://cervoboutique.pages.dev/img/p11/05.jpg",
-        "https://cervoboutique.pages.dev/img/p11/06.jpg",
-        "https://cervoboutique.pages.dev/img/p11/07.jpg",
-        "https://cervoboutique.pages.dev/img/p11/08.jpg"
       ]
     },
     {

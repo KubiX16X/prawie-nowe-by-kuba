@@ -219,7 +219,7 @@ window.PRODUKTY = [
     cena: 79,
     cenaPrzed: 229,
     historiaCen: [["2026-11-03", 230], ["2026-11-04", 229], ["2026-11-09", 129], ["2026-11-11", 79]],
-    sprzedane: false,
+    sprzedane: true,
     opis: "Lekka dzianina na wiosnę i jesień, nadruk z niebieskimi i zielonymi owocami na czarnym tle. Okrągły dekolt, długi rękaw, jasne wykończenie przy dekolcie i na dole. Pielęgnacja: prać i prasować na lewej stronie.",
     wady: null,
     wymiary: [

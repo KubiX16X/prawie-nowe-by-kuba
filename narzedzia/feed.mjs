@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 import { execSync } from 'node:child_process';
 
-const URL = 'https://prawienowe.pages.dev';
+const URL = 'https://cervoboutique.pages.dev';
 const w = {};
 vm.runInNewContext(fs.readFileSync('strona/produkty.js', 'utf8'), { window: w });
 const S = w.SKLEP || {}, P = w.PRODUKTY || [];

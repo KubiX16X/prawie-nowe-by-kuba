@@ -1,4 +1,4 @@
-# Prawie Nowe by Kuba – stałe ustalenia
+# CERVO boutique (dawniej Prawie Nowe by Kuba) – stałe ustalenia
 
 Ogłoszenia na Vinted i Szafa.pl. Pełną rolę i zasady opisów Kuba wkleja na początku rozmowy.
 Poniższe ustalenia są nowsze i mają pierwszeństwo.
@@ -39,7 +39,7 @@ Poniższe ustalenia są nowsze i mają pierwszeństwo.
 - Każdą rzecz dopisuję do pliku ogloszenia/tiktok-RRRR-MM-DD.txt i wysyłam plik.
 - Format: tytuł, CENA (podaje Kuba – jeśli nie poda, pytam), zdanie z korzyścią (►),
   wyliczenia • (STAN, WADA, ROZMIAR, WYMIARY, DETALE, MATERIAŁ), potem:
-  „ZAMÓWIENIA: przez stronę prawienowe.pages.dev, na WhatsAppie lub Instagramie, a także w wiadomości na TikToku.”
+  „ZAMÓWIENIA: przez stronę cervoboutique.pages.dev, na WhatsAppie lub Instagramie, a także w wiadomości na TikToku.”
   i zdanie „Wysyłka w 24 h, starannie zapakowane.”. Bez emoji, bez numeru telefonu na górze.
 - Hashtagi na TikToku: maksymalnie 5, najpopularniejsze: marka (jeśli znana), rodzaj rzeczy
   i popularne ogólne (np. #moda, #outfit, #dlaciebie).
@@ -48,6 +48,6 @@ Poniższe ustalenia są nowsze i mają pierwszeństwo.
 - Plik ogloszenia/instagram-RRRR-MM-DD.txt: bio na górze, potem te same opisy co na TikToku.
 - Różnice: zamiast linii z TikToka dwie linie:
   „ZAMÓWIENIA: napisz wiadomość na Instagramie lub WhatsAppie.”
-  „MOŻESZ TEŻ KUPIĆ: przez moją stronę prawienowe.pages.dev (link w bio) po wcześniejszej przedpłacie, a także na Szafa.pl lub Vinted.”
+  „MOŻESZ TEŻ KUPIĆ: przez moją stronę cervoboutique.pages.dev (link w bio) po wcześniejszej przedpłacie, a także na Szafa.pl lub Vinted.”
   Maksymalnie 5 hashtagów (np. marka, rodzaj, #outfit, #ootd).
 - Bio: max 150 znaków, bez emoji, link w polu „Linki”.

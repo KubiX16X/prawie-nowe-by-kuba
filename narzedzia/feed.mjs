@@ -32,6 +32,8 @@ const feed = {
   },
   zaktualizowano: updated,
   zasady_dla_agenta: [
+    'Sklep nazywa się CERVO boutique (dawniej Prawie Nowe by Kuba). Nie używaj starej nazwy, starego Instagrama @prawienowebykuba ani adresu prawienowe.pages.dev – ten adres już nie działa.',
+    'Adresy, Instagram, TikTok i kontakt bierz tylko z pola sklep w tym pliku.',
     'Lista zawiera tylko rzeczy dostępne teraz. Rzeczy spoza listy są sprzedane – nie promuj ich.',
     'Używaj tylko zdjęć z pola zdjecia (prawdziwe zdjęcia tego egzemplarza). Nie generuj ani nie podmieniaj zdjęć produktu.',
     'Cena, rozmiar, stan, skład i wady tylko z tego pliku. Wady opisuj uczciwie, niczego nie dopisuj.',
